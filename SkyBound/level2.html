@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKYBOUND - Ancient Ruins</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="topbar">
+        <h1>SKYBOUND<span>.</span></h1>
+        <p>WORLD 02 / ANCIENT RUINS</p>
+    </header>
+
+    <main class="game ruins">
+        <input type="checkbox" id="relic-collected">
+        <input type="checkbox" id="level-complete">
+
+        <div class="ruins-sun"></div>
+
+        <div class="ruins-world">
+            <div class="ruins-island ruins-far">
+                <div class="ruins-grass"></div>
+                <div class="ruins-rock"></div>
+                <div class="ruins-column"></div>
+            </div>
+
+            <div class="ruins-island ruins-left">
+                <div class="ruins-grass"></div>
+                <div class="ruins-rock"></div>
+
+                <label for="relic-collected" class="ruins-crystal-pickup">
+                    <span class="ruins-crystal"></span>
+                    <span class="relic-prompt">COLLECT RELIC</span>
+                </label>
+            </div>
+
+            <div class="ruins-island ruins-main">
+                <div class="ruins-grass"></div>
+                <div class="ruins-rock"></div>
+
+                <div class="character">
+                    <div class="character-shadow"></div>
+
+                    <div class="player-head">
+                        <div class="player-hair"></div>
+                        <div class="player-eye eye-left"></div>
+                        <div class="player-eye eye-right"></div>
+                    </div>
+
+                    <div class="player-body">
+                        <div class="backpack"></div>
+                        <div class="player-arm arm-left"></div>
+                        <div class="player-arm arm-right"></div>
+                    </div>
+
+                    <div class="player-legs">
+                        <div class="player-leg leg-left"></div>
+                        <div class="player-leg leg-right"></div>
+                    </div>
+                </div>
+
+                <label for="level-complete" class="ruins-exit">
+                    <span class="exit-number">3</span>
+                    <span class="exit-prompt exit-locked">EXIT LOCKED</span>
+                    <span class="exit-prompt exit-unlocked">ENTER PORTAL</span>
+                </label>
+            </div>
+
+            <div class="ruins-island ruins-right">
+                <div class="ruins-grass"></div>
+                <div class="ruins-rock"></div>
+                <div class="ruins-column"></div>
+            </div>
+        </div>
+
+        <section class="ruins-hud">
+            <p>WORLD 02 · ANCIENT RUINS</p>
+            <h2>The Lost Temple</h2>
+            <p>Explore the ruins and find the next portal.</p>
+            <a href="index.html">← Return to Level 1</a>
+        </section>
+
+        <div class="ruins-label">THE ANCIENT WORLD</div>
+
+        <section class="completion-screen">
+            <div class="completion-card">
+                <p class="completion-tag">WORLD 02 COMPLETE</p>
+                <h2>ANCIENT RUINS</h2>
+                <p>You found the lost relic and awakened the portal.</p>
+                <div class="completion-crystal">⟡</div>
+                <a href="menu.html" class="completion-button">RETURN TO WORLDS</a>
+                <a href="index.html" class="completion-link">REPLAY WORLD 01</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

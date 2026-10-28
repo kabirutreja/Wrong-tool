@@ -1,0 +1,1298 @@
+:root
+{
+    --presp: 36;
+    --eye: 1.65;
+    --stairs: 3.2;
+}
+
+html,body{height: 100%; }
+body
+{
+margin: 0;
+background: #000;
+font-family: ui-monospace, Menlo, Consolas, monospace;
+font-size: min(1.7vw, 2.3vh);
+}
+
+input
+{
+    height: 0;
+     width: 0;
+      margin: 0;
+       appearance: none;
+        float: left;
+         opacity: 0;
+}
+#tridiv
+{
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 60em;
+    height: 40em;
+    perspective: calc(var(--presp) * 1em);
+    background: #0d0f14;
+    outline: .2em solid #5a1a1a;
+}
+
+.layer
+{
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+}
+.scene
+{
+    /* --- start---*/
+    transform: translate3d(0em, calc(var(--eye) * 1em), 30em);
+
+}
+.b
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    transform-style: preserve-3d;
+    transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * -1em), calc(var(--z) * 1em));
+}
+.b i{
+    position: absolute;
+    display: block;
+    background: var(--c);
+}
+.b i::after
+{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #000;
+    opacity: var(--s, 0);
+}
+.ft
+{
+    width: calc(var(--w) * 1em);
+    height: calc(var(--h) * 1em);
+    left: calc(var(--w) * -.5em);
+    top: calc(var(--h) * -.5em);
+    transform: translateZ(calc(var(--d) * .5em));
+    --s: .2;
+}
+.bk
+{
+    width: calc(var(--w) * 1em);
+    height: calc(var(--h) * 1em);
+    left: calc(var(--w) * -.5em);
+    top: calc(var(--h) * -.5em);
+    transform: rotateY(180deg) translateZ(calc(var(--d) * .5em));
+    --s: .54;
+}
+.rt
+{
+    width: calc(var(--d) * 1em);
+    height: calc(var(--h) * 1em);
+    left: calc(var(--d) * -.5em);
+    top: calc(var(--h) * -.5em);
+    transform: rotateY(90deg) translateZ(calc(var(--w) * .5em));
+    --s: .46;
+}
+.lt
+{
+    width: calc(var(--d) * 1em);
+    height: calc(var(--h) * 1em);
+    left: calc(var(--d) * -.5em);
+    top: calc(var(--h) * -.5em);
+    transform: rotateY(-90deg) translateZ(calc(var(--w) * .5em));
+    --s: .32;
+}
+.tp
+{
+    width: calc(var(--w) * 1em);
+    height: calc(var(--d) * 1em);
+    left: calc(var(--w) * -.5em);
+    top: calc(var(--d) * -.5em);
+    transform: rotateX(90deg) translateZ(calc(var(--h) * .5em));
+    --s: 0;
+}
+.bm
+{
+    width: calc(var(--w) * 1em);
+    height: calc(var(--d) * 1em);
+    left: calc(var(--w) * -.5em);
+    top: calc(var(--d) * -.5em);
+    transform: rotateX(-90deg) translateZ(calc(var(--h) * .5em));
+    --s: .5;
+}
+.grid .tp{
+    background-image: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+    background-size: 2em 2em;
+}
+.turn
+{
+    transform-origin: 50% 50% calc(var(--presp) * 1em);
+    transition: transform .45s ease-out;
+}
+    #h0:checked ~ #tridiv .turn
+    {
+        transform: rotateY(-720deg);
+    }
+     #h1:checked ~ #tridiv .turn
+    {
+        transform: rotateY(-630deg);
+    }
+     #h2:checked ~ #tridiv .turn
+    {
+        transform: rotateY(-540deg);
+    }
+     #h3:checked ~ #tridiv .turn
+    {
+        transform: rotateY(-450deg);
+    }
+     #h4:checked ~ #tridiv .turn
+    {
+        transform: rotateY(-360deg);
+    }
+     #h5:checked ~ #tridiv .turn
+    {
+        transform: rotateY(-270deg);
+    }
+     #h6:checked ~ #tridiv .turn
+    {
+        transform: rotateY(-180deg);
+    }
+     #h7:checked ~ #tridiv .turn
+    {
+        transform: rotateY(-90deg);
+    }
+     #h8:checked ~ #tridiv .turn
+    {
+        transform: rotateY(0deg);
+    }
+     #h9:checked ~ #tridiv .turn
+    {
+        transform: rotateY(90deg);
+    }
+      #h10:checked ~ #tridiv .turn
+    {
+        transform: rotateY(180deg);
+    }
+     #h11:checked ~ #tridiv .turn
+    {
+        transform: rotateY(270deg);
+    }
+     #h12:checked ~ #tridiv .turn
+    {
+        transform: rotateY(360deg);
+    }
+     #h13:checked ~ #tridiv .turn
+    {
+        transform: rotateY(450deg);
+    }
+     #h14:checked ~ #tridiv .turn
+    {
+        transform: rotateY(540deg);
+    }
+      #h15:checked ~ #tridiv .turn
+    {
+        transform: rotateY(630deg);
+    }
+    .go
+    {
+        animation-timing-function: linear;
+        animation-play-state: paused;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+
+    }
+    .goN
+    {
+        animation-name: goN;
+        animation-duration: 5s;
+    }
+    @keyframes goN
+    {
+        100% {transform: translateZ(20em)}
+    }
+    .goE
+    {
+        animation-name: goE;
+        animation-duration: 3.5s;
+    }
+    @keyframes goE
+    {
+        100% {transform: translateX(-14em)}
+    }
+    .goS
+    {
+        animation-name: goS;
+        animation-duration: 2s;
+    }
+    @keyframes goS
+    {
+        100% {transform: translateZ(-8em)}
+    }
+    .goW
+    {
+        animation-name: goW;
+        animation-duration: 3.5s;
+    }
+    @keyframes goW
+    {
+        100% {transform: translateX(14em)}
+    }
+
+    #h0:checked ~ #forwards:active ~ #tridiv .goN,
+    #h4:checked ~ #forwards:active ~ #tridiv .goN,
+    #h8:checked ~ #forwards:active ~ #tridiv .goN,
+    #h12:checked ~ #forwards:active ~ #tridiv .goN
+    {
+        animation-play-state: running;
+    }
+
+    #h1:checked ~ #forwards:active ~ #tridiv .goE,
+    #h5:checked ~ #forwards:active ~ #tridiv .goE,
+    #h9:checked ~ #forwards:active ~ #tridiv .goE,
+    #h13:checked ~ #forwards:active ~ #tridiv .goE
+    {
+        animation-play-state: running;
+    }
+
+     #h2:checked ~ #forwards:active ~ #tridiv .goS,
+    #h6:checked ~ #forwards:active ~ #tridiv .goS,
+    #h10:checked ~ #forwards:active ~ #tridiv .goS,
+    #h14:checked ~ #forwards:active ~ #tridiv .goS
+    {
+        animation-play-state: running;
+    }
+
+     #h3:checked ~ #forwards:active ~ #tridiv .goW,
+    #h7:checked ~ #forwards:active ~ #tridiv .goW,
+    #h11:checked ~ #forwards:active ~ #tridiv .goW,
+    #h15:checked ~ #forwards:active ~ #tridiv .goW
+    {
+        animation-play-state: running;
+    }
+
+    /*back one*/
+
+    #h0:checked ~ #backwards:active ~ #tridiv .goS,
+    #h4:checked ~ #backwards:active ~ #tridiv .goS,
+    #h8:checked ~ #backwards:active ~ #tridiv .goS,
+    #h12:checked ~ #backwards:active ~ #tridiv .goS
+    {
+        animation-play-state: running;
+    }
+     #h1:checked ~ #backwards:active ~ #tridiv .goW,
+    #h5:checked ~ #backwards:active ~ #tridiv .goW,
+    #h9:checked ~ #backwards:active ~ #tridiv .goW,
+    #h13:checked ~ #backwards:active ~ #tridiv .goW
+    {
+        animation-play-state: running;
+    }
+
+    #h2:checked ~ #backwards:active ~ #tridiv .goN,
+    #h6:checked ~ #backwards:active ~ #tridiv .goN,
+    #h10:checked ~ #backwards:active ~ #tridiv .goN,
+    #h14:checked ~ #backwards:active ~ #tridiv .goN
+    {
+        animation-play-state: running;
+    }
+
+    #h3:checked ~ #backwards:active ~ #tridiv .goE,
+    #h7:checked ~ #backwards:active ~ #tridiv .goE,
+    #h11:checked ~ #backwards:active ~ #tridiv .goE,
+    #h15:checked ~ #backwards:active ~ #tridiv .goE
+    {
+        animation-play-state: running;
+    }
+
+
+    #h0:checked ~ #left:active ~ #tridiv .goW,
+    #h4:checked ~ #left:active ~ #tridiv .goW,
+    #h8:checked ~ #left:active ~ #tridiv .goW,
+    #h12:checked ~ #left:active ~ #tridiv .goW
+    {
+        animation-play-state: running;
+    }
+
+    #h1:checked ~ #left:active ~ #tridiv .goN,
+    #h5:checked ~ #left:active ~ #tridiv .goN,
+    #h9:checked ~ #left:active ~ #tridiv .goN,
+    #h13:checked ~ #left:active ~ #tridiv .goN
+    {
+        animation-play-state: running;
+    }
+
+    #h2:checked ~ #left:active ~ #tridiv .goE,
+    #h6:checked ~ #left:active ~ #tridiv .goE,
+    #h10:checked ~ #left:active ~ #tridiv .goE,
+    #h14:checked ~ #left:active ~ #tridiv .goE
+    {
+        animation-play-state: running;
+    }
+
+    #h3:checked ~ #left:active ~ #tridiv .goS,
+    #h7:checked ~ #left:active ~ #tridiv .goS,
+    #h11:checked ~ #left:active ~ #tridiv .goS,
+    #h15:checked ~ #left:active ~ #tridiv .goS
+    {
+        animation-play-state: running;
+    }
+
+
+
+
+
+
+
+
+
+
+        #h0:checked ~ #right:active ~ #tridiv .goE,
+    #h4:checked ~ #right:active ~ #tridiv .goE,
+    #h8:checked ~ #right:active ~ #tridiv .goE,
+    #h12:checked ~ #right:active ~ #tridiv .goE
+    {
+        animation-play-state: running;
+    }
+
+    #h1:checked ~ #right:active ~ #tridiv .goS,
+    #h5:checked ~ #right:active ~ #tridiv .goS,
+    #h9:checked ~ #right:active ~ #tridiv .goS,
+    #h13:checked ~ #right:active ~ #tridiv .goS
+    {
+        animation-play-state: running;
+    }
+
+    #h2:checked ~ #right:active ~ #tridiv .goW,
+    #h6:checked ~ #right:active ~ #tridiv .goW,
+    #h10:checked ~ #right:active ~ #tridiv .goW,
+    #h14:checked ~ #right:active ~ #tridiv .goW
+    {
+        animation-play-state: running;
+    }
+
+    #h3:checked ~ #right:active ~ #tridiv .goN,
+    #h7:checked ~ #right:active ~ #tridiv .goN,
+    #h11:checked ~ #right:active ~ #tridiv .goN,
+    #h15:checked ~ #right:active ~ #tridiv .goN
+    {
+        animation-play-state: running;
+    }
+
+
+    .lift
+    {
+        transition: transform 2.4s ease-in-out;
+    }
+
+    #lift:checked ~ #tridiv .lift{
+        transform: translate3d(0, calc(var(--stairs) *1em), 14em);
+    }
+
+    .controls
+    {
+        position: absolute;
+        z-index: 10;
+        top: 1em;
+        left: 1em;
+        display: grid;
+        grid-template-columns: repeat(3, 2.6em);
+        grid-auto-rows: 2.6em;
+        gap: .3em;
+    }
+    .button
+    {
+        display: grid;
+        place-items: center;
+        background: rgba(60, 64, 76, .85);
+        color: #e8e4da;
+        border: 1px solid rgba(232,228,218,.25);
+        border-radius: .3em;
+        user-select: none;
+        cursor: pointer;
+    }
+    .button small {
+   display: block;
+         font-size: .6em;
+         opacity: .7;
+    }
+    .turnleft, .turnright
+    {
+        display: none;
+    }
+    .button.forwards
+    {
+        grid-area: 1/2;
+    }
+    .button.backwards
+    {
+        grid-area: 2/2;
+    }
+    .button.left{
+        grid-area: 2/1;
+    }
+    .button.right
+    {
+        grid-area: 2/3;
+    }
+    .button.level
+    {
+        grid-area: 3/1/4/4;
+        font-size: .8em;
+    }
+    .turnleft
+    {
+        grid-area: 1/1;
+    }
+    .turnright
+    {
+        grid-area: 1/3;
+    }
+
+    #forwards:active ~ #tridiv .forwards,#backwards:active ~ #tridiv .backwards,#left:active ~ #tridiv .left, #right:active ~ #tridiv .right
+    {
+        background: #c9a45c;
+        color: #111;
+
+    }
+    #lift:checked ~ #tridiv .level
+    {
+       background: #c9a45c;
+        color: #111;
+
+    }
+
+    .legend
+    {
+        position: absolute;
+        z-index: 10;
+        right: 1em;
+        bottom: 1em;
+        color: #e8e4da;
+        font-size: .9em;
+        background: rgba(13, 15, 20, .66);
+        padding: .5em .8em;
+        border-radius: .3em;
+        line-height: 1.5;
+    }
+    .compass
+    {
+        position: absolute;
+        z-index: 10;
+        top: 1em;
+        right: 1em;
+        width: 2.4em;
+        height: 2.4em;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: rgba(13, 15, 20, .66);
+        color: #c9a45c;
+        border: 1px solid rgba(232,228,218,.25);
+    }
+        .compass::after
+        {
+            content: "N";
+        }
+
+        #h0:checked ~ #tridiv .compass::after
+        {
+            content: "N";
+        }
+        #h0:checked ~ #tridiv .tr0
+        {
+            display: grid;
+        }
+
+
+        #h1:checked ~ #tridiv .compass::after
+        {
+            content: "E";
+        }
+        #h1:checked ~ #tridiv .tr1
+        {
+            display: grid;
+        }
+        #h1:checked ~ #tridiv .tl1
+        {
+            display: grid;
+        }
+
+
+        #h2:checked ~ #tridiv .compass::after
+        {
+            content: "S";
+        }
+        #h2:checked ~ #tridiv .tr2
+        {
+            display: grid;
+        }
+        #h2:checked ~ #tridiv .tl2
+        {
+            display: grid;
+        }
+
+         #h3:checked ~ #tridiv .compass::after
+        {
+            content: "W";
+        }
+        #h3:checked ~ #tridiv .tr3
+        {
+            display: grid;
+        }
+        #h3:checked ~ #tridiv .tl3
+        {
+            display: grid;
+        }
+
+         #h4:checked ~ #tridiv .compass::after
+        {
+            content: "N";
+        }
+        #h4:checked ~ #tridiv .tr4
+        {
+            display: grid;
+        }
+        #h4:checked ~ #tridiv .tl4
+        {
+            display: grid;
+        }
+
+
+        #h5:checked ~ #tridiv .compass::after
+        {
+            content: "E";
+        }
+        #h5:checked ~ #tridiv .tr5
+        {
+            display: grid;
+        }
+        #h5:checked ~ #tridiv .tl5
+        {
+            display: grid;
+        }
+
+
+        #h6:checked ~ #tridiv .compass::after
+        {
+            content: "S";
+        }
+        #h6:checked ~ #tridiv .tr6
+        {
+            display: grid;
+        }
+        #h6:checked ~ #tridiv .tl6
+        {
+            display: grid;
+        }
+
+
+        #h7:checked ~ #tridiv .compass::after
+        {
+            content: "W";
+        }
+        #h7:checked ~ #tridiv .tr7
+        {
+            display: grid;
+        }
+        #h7:checked ~ #tridiv .tl7
+        {
+            display: grid;
+        }
+
+
+        #h8:checked ~ #tridiv .compass::after
+        {
+            content: "N";
+        }
+        #h8:checked ~ #tridiv .tr8
+        {
+            display: grid;
+        }
+        #h8:checked ~ #tridiv .tl8
+        {
+            display: grid;
+        }
+
+
+        #h9:checked ~ #tridiv .compass::after
+        {
+            content: "E";
+        }
+        #h9:checked ~ #tridiv .tr9
+        {
+            display: grid;
+        }
+        #h9:checked ~ #tridiv .tl9
+        {
+            display: grid;
+        }
+
+        #h10:checked ~ #tridiv .compass::after
+        {
+            content: "S";
+        }
+        #h10:checked ~ #tridiv .tr10
+        {
+            display: grid;
+        }
+        #h10:checked ~ #tridiv .tl10
+        {
+            display: grid;
+        }
+
+        #h11:checked ~ #tridiv .compass::after
+        {
+            content: "W";
+        }
+        #h11:checked ~ #tridiv .tr11
+        {
+            display: grid;
+        }
+        #h11:checked ~ #tridiv .tl11
+        {
+            display: grid;
+        }
+
+        #h12:checked ~ #tridiv .compass::after
+        {
+            content: "N";
+        }
+        #h12:checked ~ #tridiv .tr12
+        {
+            display: grid;
+        }
+        #h12:checked ~ #tridiv .tl12
+        {
+            display: grid;
+        }
+
+         #h13:checked ~ #tridiv .compass::after
+        {
+            content: "E";
+        }
+        #h13:checked ~ #tridiv .tr13
+        {
+            display: grid;
+        }
+        #h13:checked ~ #tridiv .tl13
+        {
+            display: grid;
+        }
+
+            #h14:checked ~ #tridiv .compass::after
+        {
+            content: "S";
+        }
+        #h14:checked ~ #tridiv .tr14
+        {
+            display: grid;
+        }
+        #h14:checked ~ #tridiv .tl14
+        {
+            display: grid;
+        }
+
+            #h15:checked ~ #tridiv .compass::after
+        {
+            content: "W";
+        }
+        
+        #h15:checked ~ #tridiv .tl15
+        {
+            display: grid;
+        }
+
+
+
+        /*gun logic*/
+        .button.fire
+        {
+            grid-area: 4/1/5/4;
+            font-size: .8em;
+        }
+        #fire:active ~ #tridiv .button.fire{
+            background: #c9a45c;
+            color: #111;
+        }
+
+        .crosshair
+        {
+            position: absolute;
+            z-index: 6;
+            left: 50%;
+            top: 50%;
+            width: 1.6em;
+            height: 1.6em;
+            margin: -.8em 0 0 -.8em;
+            pointer-events: none;
+            background: linear-gradient(#e8e4da,#e8e4da) 50% 0 / 1px 35% no-repeat,
+                           linear-gradient(#e8e4da,#e8e4da) 50% 100% / 1px 35% no-repeat,
+                               linear-gradient(#e8e4da,#e8e4da) 0 50% / 35% 1px no-repeat,
+                                 linear-gradient(#e8e4da,#e8e4da) 100% 50% / 35% 1px no-repeat;
+        }
+        .gun
+        {
+            position: absolute;
+            z-index: 5;
+            left: 50%;
+            bottom: -2em;
+            width: 12em;
+            height: 19em;
+            margin-left: -4em;
+            pointer-events: none;
+        }
+        .gun-kick
+        {
+            position: absolute;
+            inset: 0;
+            transition: transform 0.25s ease-out;
+        }
+        .gun i{
+            position: absolute;
+            display: block;
+        }
+        .gun .slide
+        {
+            left: 4em;
+            top: 0;
+            width: 4em;
+            height: 12em;
+            border-radius: .5em .5em 0 0;
+            background: linear-gradient(90deg, #20232b, #5b6272 45%, #2a2e38);
+
+        }
+        .gun .sight{
+            left: 5.6em;
+            top: -.5em;
+            width: .8em;
+            height: 1em;
+            border-radius: .2em;
+            background: #15171c;
+
+        }
+        .gun .frame
+        {
+            left: 3.6em;
+            top: 10em;
+            width: 4.8em;
+            height: 4em;
+            border-radius: .4em;
+            background: linear-gradient(90deg, #15171c, #343945, #15171c);
+        }
+        .gun .grip
+        {
+            left: 4em;
+            top: 13em;
+            width: 4em;
+            height: 9em;
+            border-radius: .4em .4em 1em 1em;
+            background: linear-gradient(90deg, #14161b, #2b2f3a, #14161b);
+        }
+        .gun .hand
+        {
+            left: 2.6em;
+            top: 14em;
+            width: 6.8em;
+            height: 8em;
+            border-radius: 2.2em 2.2em 0 0;
+            background: linear-gradient(90deg, #8e644b, #c48f6e 50%, #8e644b);
+        }
+        .gun .flash
+        {
+            left: 2em;
+            top: -5em;
+            width: 8em;
+            height: 6em;
+            opacity: 0;
+            transition: opacity .25s ease-out;
+            background: radial-gradient(closest-side, #fff 0%, #ffe08a 30%, rgba(255,140,0,.6) 55%,transparent 100%);
+        }
+        #fire:active ~ #tridiv .gun-kick, #hit1:active ~ #tridiv .gun-kick, #hit2:active ~ #tridiv .gun-kick, #hit3:active ~ #tridiv .gun-kick, #hit4:active ~ #tridiv .gun-kick, #hit5:active ~ #tridiv .gun-kick
+        {
+            transform: translateY(.9em);
+            transition-duration: .04s;
+        }
+        #fire:active ~ #tridiv .gun .flash, #hit1:active ~ #tridiv .gun .flash, #hit2:active ~ #tridiv .gun .flash, #hit3:active ~ #tridiv .gun .flash, #hit4:active ~ #tridiv .gun .flash, #hit5:active ~ #tridiv .gun .flash
+        {
+            opacity: 1;
+            transition-duration: .02s;
+        }
+        .shotglow
+        {
+            position: absolute;
+            inset: 0;
+            z-index: 4;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity .12s;
+             background: radial-gradient(circle at 52% 45%, rgba(255,210,120,.55),transparent 50%);
+
+        }
+        #fire:active ~ #tridiv .shotglow, #hit1:active ~ #tridiv .shotglow, #hit2:active ~ #tridiv .shotglow, #hit3:active ~ #tridiv .shotglow, #hit4:active ~ #tridiv .shotglow, #hit5:active ~ #tridiv .shotglow
+        {
+            opacity: 1;
+            transition-duration: .02s;
+        }
+        .legend
+        {
+            right: auto;
+            left: 1em;
+            font-size: .62em;
+        }
+        @keyframes bob
+        {
+           0%,100%
+           {
+            transform: translate(0, 0);
+           }
+           25%
+           {
+            transform: translate(.6em, .5em);
+           }
+           50%
+           {
+            transform: translate(0,0);
+           }
+           75%
+           {
+            transform: translate(-.6em,.5em);
+           }
+        }
+        #forwards:active ~ #tridiv .gun,#backwards:active ~ #tridiv .gun,#left:active ~ #tridiv .gun,#right:active ~ #tridiv .gun
+        {
+            animation: bob .5s linear infinite;
+        }
+
+        /*mobs scene*/
+        .b label
+        {
+            position: absolute;
+            display: block;
+            background: var(--c);
+            cursor: crosshair;
+        }
+        .b label::after
+        {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: #000;
+            opacity: var(--s, 0);
+        }
+        .mob
+        {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 0;
+            height: 0;
+            transform-style: preserve-3d;
+            transform: translate3d(calc(var(--x) * 1em), calc(var(--y) * -1em), calc(var(--z) * 1em)) rotateY(calc(var(--ry, 0) * 1deg));
+        }
+        .mob-in, .mob-idle, .swing
+        {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 0;
+            transform-style: preserve-3d;
+        }
+        .mob-in
+        {
+            transition: transform .8s cubic-bezier(.45, 0, .9, .55);
+        }
+        .mob-idle
+        {
+            animation: breathe 2.8s ease-in-out infinite;
+            animation-delay: calc(var(--dl, 0) * -1s);
+        }
+        .swing
+        {
+            animation: swing 3.2s ease-in-out infinite;
+            animation-delay: calc(var(--dl, 0) * -1s);
+        }
+        .sw-b
+        {
+            animation-direction: reverse;
+        }
+        .look
+        {
+            animation-name: look;
+            animation-duration: 6s;
+        }
+        @keyframes breathe 
+        {
+            0%, 100%
+            {
+                transform: translateY(0);
+            }
+            50%
+            {
+                transform: translateY(-.03em);
+            }
+        }
+        @keyframes swing 
+        {
+             0%, 100%
+            {
+                transform: rotateX(-7deg);
+            }
+            50%
+            {
+                transform: rotateX(7deg);
+            }
+        }
+        @keyframes look
+        {
+            0%, 35%
+            {
+                transform: rotateY(0);
+            }
+            45%, 60%
+            {
+                transform: rotateY(22deg);
+            }
+            70%, 85%
+            {
+                transform: rotateY(-22deg);
+            }
+            100%
+            {
+                transform: rotateY(0);
+            }
+        }
+
+        #hit1:checked ~ #tridiv .g1 .mob-in, #hit2:checked ~ #tridiv .g2 .mob-in, #hit3:checked ~ #tridiv .g3 .mob-in, #hit4:checked ~ #tridiv .g4 .mob-in, #hit5:checked ~ #tridiv .g5 .mob-in
+        {
+            transform: translateY(-.17em) rotateX(90deg);
+        }
+
+        #hit1:checked ~ #tridiv .g1 label, #hit2:checked ~ #tridiv .g2 label, #hit3:checked ~ #tridiv .g3 label, #hit4:checked ~ #tridiv .g4 label, #hit5:checked ~ #tridiv .g5 label
+        {
+            pointer-events: none;
+        }
+
+        #hit1:checked ~ #tridiv .g1 .mob-idle, #hit2:checked ~ #tridiv .g2 .mob-idle, #hit3:checked ~ #tridiv .g3 .mob-idle, #hit4:checked ~ #tridiv .g4 .mob-idle, #hit5:checked ~ #tridiv .g5 .mob-idle
+        {
+            animation-play-state: paused;
+        }
+        #hit1:checked ~ #tridiv .g1 .swing, #hit2:checked ~ #tridiv .g2 .swing, #hit3:checked ~ #tridiv .g3 .swing, #hit4:checked ~ #tridiv .g4 .swing, #hit5:checked ~ #tridiv .g5 .swing
+        {
+            animation-play-state: paused;
+        }
+
+        /*lamps system*/
+        .button.lights
+        {
+            grid-area: 5/1/6/4;
+            font-size: .8em;
+        }
+        #lamps:checked ~ #tridiv .button.lights
+        {
+            background: #c9a45c;
+            color: #111;
+        }
+
+        .vignette
+        {
+            position: absolute;
+            inset: 0;
+            z-index: 4;
+            pointer-events: none;
+            background: radial-gradient(ellipse at 50% 50%, transparent 40%, rgba(0,0,0,.6) 100%);
+        }
+        .dim
+        {
+           position: absolute;
+           inset: 0;
+           z-index: 4;
+           pointer-events: none;
+           opacity: 0;
+           transition: opacity 0.6s;
+           background: radial-gradient(circle at 50% 55%, rgba(0,0,10,0) 6em, rgba(0,0,10,.94) 26em);
+        }
+        #lamps:checked ~ #tridiv .dim
+        {
+            opacity: 1;
+        }
+        .lamp i, .pool i{
+            transition: opacity .6s;
+        }
+        .pool i.tp{
+            background: radial-gradient(closest-side, rgba(255,226,150,.6) 0%, rgba(255,226,150,.28) 45%, transparent 100%);
+        }
+        #lamps:checked ~ #tridiv .lamp i, #lamps:checked ~ #tridiv .pool i
+        {
+            opacity: 0;
+            animation: none;
+        }
+
+        .flicker i
+        {
+            animation: flick 5s steps(1) infinite;
+        }
+
+        @keyframes flick 
+        {
+            0%, 100% {opacity: 1;}
+            8% {opacity: .25;}
+            10% {opacity: 1;}
+            45% {opacity: .55;}
+            47% {opacity: 1;}
+            73% {opacity: .35;}
+            75% {opacity: 1;}
+        }
+
+        /*main menu*/
+        .menu
+        {
+            position: absolute;
+            inset: 0;
+            z-index: 50;
+            display: grid;
+            place-content: center;
+            justify-items: center;
+            gap: 1em;
+            text-align: center;
+            color: #e8e4da;
+            background: radial-gradient(ellipse at center, rgba(40,12,12,.85), #000 85%);
+            transition: opacity .6s, visibility .6s;
+        }
+        .menu h1{
+            margin: 0;
+            font-size: 6em;
+            letter-spacing: .3em;
+            padding-left: .3em;
+            color: #c9a45c;
+            text-shadow: 0 0 .4em #7a1f1f;
+        }
+        .menu .sub
+        {
+            margin: 0;
+            opacity: .7;
+            font-size: .9em;
+        }
+        .menu .how{
+            margin: .6em 0 0;
+            font-size: .7em;
+            line-height: 1.7;
+            opacity: .75;
+        }
+        .start
+        {
+            display: block;
+            margin-top: 1em;
+            padding: .5em 1.8em;
+            border: 2px solid #c9a45c;
+            color: #c9a45c;
+            font-size: 1.5em;
+            cursor: pointer;
+            user-select: none;
+            animation: pulse 1.4s ease-in-out infinite;
+        }
+        .start:hover
+        {
+            background: #c9a45c;
+            color: #111;
+            animation: none;
+
+        }
+        @keyframes pulse
+        {
+            0%,100%
+            {
+                box-shadow: 0 0 0 rgba(201, 164, 92, 0);
+            }
+            50%
+            {
+                box-shadow: 0 0 1.2em rgba(201, 164, 92, .55);
+            }
+        }
+        #play:checked ~ #tridiv .menu{
+            opacity: 0;
+            visibility: hidden;
+        }
+        .hud
+        {
+            position: absolute;
+            z-index: 12;
+            left: 50%;
+            bottom: 1em;
+            transform: translateX(-50%);
+            counter-reset: k;
+            color: #e8e4da;
+            font-size: 1.1em;
+            background: rgba(13, 15, 20, .7);
+            padding: .3em 1em;
+            border: 1px solid rgba(232,228,218,.25);
+            border-radius: .3em;
+        }
+        .hud .k
+        {
+            font-size: 0
+        }
+        #hit1:checked ~ #tridiv .k1
+        {
+            counter-increment: k;
+        }
+        #hit2:checked ~ #tridiv .k2
+        {
+            counter-increment: k;
+        }
+        #hit3:checked ~ #tridiv .k3
+        {
+            counter-increment: k;
+        }
+        #hit4:checked ~ #tridiv .k4 
+        { 
+            counter-increment: k; 
+        }
+#hit5:checked ~ #tridiv .k5 
+{
+     counter-increment: k; 
+}
+        .hud .kills::after
+        {
+            content: "GUARDS DOWN  " counter(k) " / 5";
+            font-weight: normal;
+        }
+        .win, .over{
+                 position: absolute;
+                 inset: 0;
+                 z-index: 40;
+                 display: grid;
+                 place-content: center;
+                 justify-items: center;
+                 gap: .6em;
+                 text-align: center;
+                 color: #e8e4da;
+                 opacity: 0;
+                 visibility: hidden;
+                 transition: opacity .8s .5s, visibility .8s .5s ;
+        }
+                 .win{
+                    background: rgba(10,30,15,.82);
+                 }
+
+                 .win h2, .over h2 
+                 { margin: 0; 
+                    font-size: 4em; 
+                    letter-spacing: .2em; 
+                    color: #c9a45c; 
+                }
+                 .win p, .over p 
+{ 
+    margin: 0; 
+    opacity: .8;
+ }
+.again 
+{ display: block; 
+    margin-top: 1em; 
+    padding: .5em 1.6em; 
+    border: 2px solid #c9a45c; 
+    color: #c9a45c; 
+    font-size: 1.2em; 
+    text-decoration: none; 
+    cursor: pointer; 
+
+}
+.again:hover { 
+    background: #c9a45c; 
+    color: #111; }
+#hit1:checked ~ #hit2:checked ~ #hit3:checked ~ #hit4:checked ~ #hit5:checked ~ #tridiv .win { 
+    opacity: 1; 
+    visibility: visible; }
+
+    .timer
+    {
+        position: absolute;
+        z-index: 12;
+        left: 50%;
+        top: 1em;
+        width: 16em;
+        height: .9em;
+        margin-left: -8em;
+        border: 1px solid rgba(232,228,218,.4);
+        background: rgba(13, 15, 20, .7);
+
+    }
+    .bar
+    {
+       height: 100%;
+       background: #c9a45c;
+       animation: drain 75s linear forwards;
+       animation-play-state: paused;
+
+    }
+    @keyframes drain
+    {
+        0%
+        {
+            width: 100%;
+            background: #c9a45c;
+        }
+        70%
+        {
+            background: #c9a45c;
+        }
+        100%
+        {
+            width: 0;
+            background: #b3261e;
+        }
+    }
+    .alarm
+    {
+         position: absolute;
+         inset: 0;
+        z-index: 11;
+        pointer-events: none;
+        opacity: 0;
+        box-shadow: inset 0 0 8em 1em rgba(200,20,20,.85);
+        animation: alarm 1s ease-in-out 65s infinite;
+        animation-play-state: paused;
+    }
+    @keyframes alarm
+    {
+        0%,100%
+        {
+            opacity: .15;
+        }
+        50%
+        {
+            opacity: .8;
+        }
+    }
+    .over
+    {
+        background: rgba(40,6,6,.88);
+        transition: none;
+        animation: overIn .6s ease-out 75s forwards;
+        animation-play-state: paused;
+    }
+    .over h2
+    {
+        color: #d9534f;
+    }
+    @keyframes overIn
+    {
+        to
+        {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+    }
+    
+    #play:checked ~ #tridiv .bar, #play:checked ~ #tridiv .alarm, #play:checked ~ #tridiv .over { animation-play-state: running; }
+#hit1:checked ~ #hit2:checked ~ #hit3:checked ~ #hit4:checked ~ #hit5:checked ~ #tridiv .bar,
+#hit1:checked ~ #hit2:checked ~ #hit3:checked ~ #hit4:checked ~ #hit5:checked ~ #tridiv .alarm,
+#hit1:checked ~ #hit2:checked ~ #hit3:checked ~ #hit4:checked ~ #hit5:checked ~ #tridiv .over { animation-play-state: paused; }
+#hit1:checked ~ #hit2:checked ~ #hit3:checked ~ #hit4:checked ~ #hit5:checked ~ #tridiv .alarm { display: none; }
+
+        
+

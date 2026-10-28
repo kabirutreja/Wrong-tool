@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body{
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background: #10131a;
+        color: white;
+        padding: 25px;
+        margin: 0;
+      }
+      h1
+      {
+        margin-bottom: 5px 0 10px;
+        font-size: 26px;
+      }
+      p{
+        color: #b8beca;
+        margin-bottom: 20px;
+      }
+
+      .reward
+      {
+        background: #1b202b;
+        border: 1px solid #303746
+        border-radius: 18px;
+        padding: 18px;
+        margin: 20px 0;
+      }
+      .amount
+      {
+        font-size: 32px;
+        font-weight: bold;
+        margin-top: 8px;
+      }
+      button
+      {
+        background: #5b5ff7;
+        color: white;
+        border: none;
+        border-radius: 12px;
+        padding: 13px 35px;
+        font-size: 17px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+      button:hover
+      {
+        background: #7074ff;
+        transform: scale(1.03);
+      }
+      button:active
+      {
+        transform: scale(0.97);
+      }
+      </style>
+
+  </head>
+  <body>
+    <h1>🌙 Welcome Back</h1>
+    <p>Your miners kept working while you were away.</p>
+    <div class="reward">
+      <div>Offline Earnings</div>
+    <div class="amount">
+    💎 <?= offlineShards ?>
+    </div>
+    </div>
+    
+    <button onclick="collect()">
+    Collect
+    </button>
+    
+    <script>
+
+    function collect()
+    {
+      google.script.run.withSuccessHandler(function(){google.script.host.close();}).collectOfflineEarnings();
+    }
+    </script>
+  </body>
+</html>

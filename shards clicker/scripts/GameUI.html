@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body
+      {
+        margin: 0;
+        height: 100vh;
+        background: #10131a;
+        color: white;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      #counter
+      {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 35px;
+      }
+      
+      #crystal
+      {
+        font-size: 120px;
+        cursor: pointer;
+        user-select: none;
+        transition: transform 0.08s ease;
+      }
+      #crystal:active
+      {
+        transform: scale(0.85);
+      }
+      .floatText
+      {
+        position: absolute;
+        color: #8be9ff;
+        font-size: 24px;
+        font-weight: bold;
+        pointer-events: none;
+        animation: floatUp 0.8s ease-out forwards;
+      }
+      @keyframes floatUp
+      {
+       0%
+       {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+       }
+       100%
+       {
+        opacity: 0;
+        transform: translateY(-80px) scale(1.2);
+       }
+      }
+
+      .clickEffect
+      {
+        animation: crystalPop 0.15s ease;
+      }
+      @keyframes crystalPop
+      {
+        0% {transform: scale(1); }
+        50% {transform: scale(1.18); }
+        100% {transform: scale(1); }
+      }
+      </style>
+   
+  </head>
+  <body>
+    <div id="counter">💎 0</div>
+    <div id="crystal" onclick="clickCrystal()">
+      💎
+      </div>
+
+      <script>
+        let shards = 0;
+        function clickCrystal()
+        {
+          shards++
+          updateCounter();
+          crystalAnimation();
+          floatingText();
+          google.script.run.clickCrystal()
+        }
+        function updateCounter()
+        {
+          document.getElementById("counter").innerText = "💎 " + shards;
+        }
+        function crystalAnimation()
+        {
+          const crystal = document.getElementById("crystal");
+          crystal.classList.add("clickEffect");
+        }
+        function floatingText()
+        {
+          const text = document.createElement("div");
+          text.className = "floatText";
+          text.innerText = "+1 💎"
+          text.style.left = (window.innerHeight/ 2-40) + "px";
+          document.body.appendChild(text);
+          setTimeout(function(){text.remove();}, 800);
+          </script>
+        }
+    
+  </body>
+</html>

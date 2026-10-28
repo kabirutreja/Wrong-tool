@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hall</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!---- touch inputs of type radio  ;;
+Also for reviewer: this is from inspiration by wolfstein 3d-->
+<input type="radio" name="heading" id="h0">
+<input type="radio" name="heading" id="h1">
+<input type="radio" name="heading" id="h2">
+<input type="radio" name="heading" id="h3">
+<input type="radio" name="heading" id="h4">
+<input type="radio" name="heading" id="h5">
+<input type="radio" name="heading" id="h6">
+<input type="radio" name="heading" id="h7">
+<input type="radio" name="heading" id="h8" checked>
+<input type="radio" name="heading" id="h9">
+<input type="radio" name="heading" id="h10">
+<input type="radio" name="heading" id="h11">
+<input type="radio" name="heading" id="h12">
+<input type="radio" name="heading" id="h13">
+<input type="radio" name="heading" id="h14">
+<input type="radio" name="heading" id="h15">
+<input type="button" accesskey="a" id="left">
+<input type="button" accesskey="s" id="backwards">
+<input type="button" accesskey="w" id="forwards">
+<input type="button" accesskey="d" id="right">
+<input type="checkbox" id="lift">
+<input type="button" accesskey="f" id="fire">
+<input type="checkbox" id="hit1">
+<input type="checkbox" id="hit2">
+<input type="checkbox" id="hit3">
+<input type="checkbox" id="hit4">
+<input type="checkbox" id="hit5">
+<input type="checkbox" accesskey="l" id="lamps">
+<input type="checkbox" id="play">
+
+<div id="tridiv">
+    <div class="controls">
+
+        <!-- one time press turn across-->
+        <label class="button turnleft tl1" accesskey="q" for="h0">&#8634;<small>Q</small></label>
+        <label class="button turnleft tl2" accesskey="q" for="h1">&#8634;<small>Q</small></label>
+        <label class="button turnleft tl3" accesskey="q" for="h2">&#8634;<small>Q</small></label>
+        <label class="button turnleft tl4" accesskey="q" for="h3">&#8634;<small>Q</small></label>
+        <label class="button turnleft tl5" accesskey="q" for="h4">&#8634;<small>Q</small></label>
+        <label class="button turnleft tl6" accesskey="q" for="h5">&#8634;<small>Q</small></label>
+        <label class="button turnleft tl7" accesskey="q" for="h6">&#8634;<small>Q</small></label>
+        <label class="button turnleft tl8" accesskey="q" for="h7">&#8634;<small>Q</small></label>
+        <label class="button turnleft tl9" accesskey="q" for="h8">&#8634;<small>Q</small></label>
+        <label class="button turnleft tl10" accesskey="q" for="h9">&#8634;<small>Q</small></label>
+        <label class="button turnleft tl11" accesskey="q" for="h10">&#8634;<small>Q</small></label>
+        <label class="button turnleft tl12" accesskey="q" for="h11">&#8634;<small>Q</small></label>
+        <label class="button turnleft tl13" accesskey="q" for="h12">&#8634;<small>Q</small></label>
+        <label class="button turnleft tl14" accesskey="q" for="h13">&#8634;<small>Q</small></label>
+        <label class="button turnleft tl15" accesskey="q" for="h14">&#8634;<small>Q</small></label>
+
+        <label class="button turnright tr0" accesskey="e" for="h1">&#8635;<small>E</small></label>
+        <label class="button turnright tr1" accesskey="e" for="h2">&#8635;<small>E</small></label>
+        <label class="button turnright tr2" accesskey="e" for="h3">&#8635;<small>E</small></label>
+        <label class="button turnright tr3" accesskey="e" for="h4">&#8635;<small>E</small></label>
+        <label class="button turnright tr4" accesskey="e" for="h5">&#8635;<small>E</small></label>
+        <label class="button turnright tr5" accesskey="e" for="h6">&#8635;<small>E</small></label>
+        <label class="button turnright tr6" accesskey="e" for="h7">&#8635;<small>E</small></label>
+        <label class="button turnright tr7" accesskey="e" for="h8">&#8635;<small>E</small></label>
+        <label class="button turnright tr8" accesskey="e" for="h9">&#8635;<small>E</small></label>
+        <label class="button turnright tr9" accesskey="e" for="h10">&#8635;<small>E</small></label>
+        <label class="button turnright tr10" accesskey="e" for="h11">&#8635;<small>E</small></label>
+        <label class="button turnright tr11" accesskey="e" for="h12">&#8635;<small>E</small></label>
+        <label class="button turnright tr12" accesskey="e" for="h13">&#8635;<small>E</small></label>
+        <label class="button turnright tr13" accesskey="e" for="h14">&#8635;<small>E</small></label>
+        <label class="button turnright tr14" accesskey="e" for="h15">&#8635;<small>E</small></label>
+
+        <label class="button forwards" for="forwards">&#9650;<small>W</small></label>
+        <label class="button left" for="left">&#9664;<small>A</small></label>
+        <label class="button right" for="right">&#9654;<small>D</small></label>
+        <label class="button backwards" for="backwards">&#9660;<small>S</small></label>
+        <label class="button level" accesskey="r" for="lift">stairs up / down<small>R</small></label>
+        <label class="button fire" for="fire">FIRE<small>F</small></label>
+        <label class="button lights" for="lamps">torch mode<small>L</small></label>
+
+
+        <!--note for kartikey: I'm making a compass coz in html there is no way to detect facing direction-->
+        
+        
+        
+    </div>
+
+    <div class="compass" aria-label="Facing"></div>
+    <div class="legend">Hold W A S D or arrow buttons( tap Q E to turn)<br>R: glide only when standing on highlighted platforms<br>Tap on guards to shoot them!<br>Enjoy the game ^^</div>
+
+    <div class="vignette"></div>
+    <div class="dim"></div>
+
+    <div class="shotglow"></div>
+    <div class="crosshair"></div>
+    <div class="gun">
+        <div class="gun-kick">
+            <i class="flash"></i>
+            <i class="sight"></i>
+            <i class="slide"></i>
+            <i class="frame"></i>
+            <i class="grip"></i>
+            <i class="hand"></i>
+        </div>
+    </div>
+
+    <div class="hud">
+        <span class="k k1"></span>
+        <span class="k k2"></span>
+        <span class="k k3"></span>
+        <span class="k k4"></span>
+        <span class="k k5"></span>
+        <b class="kills"></b>
+    </div>
+    
+    <div class="win">
+        <h2>HALL CLEARED</h2>
+        <p>All guards down.</p>
+        <a class="again" href="index.html">PLAY AGAIN</a>
+    </div>
+    
+    <div class="timer"><div class="bar"></div></div>
+    <div class="alarm"></div>
+    <div class="over">
+        <h2>TIME'S UP</h2>
+        <p>The guards got you.</p>
+        <a class="again" href="index.html">TRY AGAIN</a>
+    </div>
+    <div class="menu">
+        <h1>HALL</h1>
+        <p class="sub">a 3d shooter made with only html &amp; css</p>
+        <label class="start" for="play">&#9654; START</label>
+        <p class="how">Hold MOVE BUTTONS to move &middot; tap Q / E BUTTONS to turn<br>R: glide up / down the stairs &middot; L: torch mode<br>Click all 5 guards to shoot them<br>You have 75 seconds.</p>
+    </div>
+
+
+<div class="layer turn">
+    <div class="layer go goN">
+        <div class="layer go goS">
+            <div class="layer go goE">
+                <div class="layer go goW">
+                    <div class="layer lift">
+                        <div class="layer scene">
+                            <div class="b grid" style="--x:0;--y:-0.5;--z:0;--w:30;--h:1;--d:30;--c:#343946">
+                                <i class="tp"></i>
+                                
+                            </div>
+                            <div class="b" style="--x:0;--y:8.5;--z:0;--w:30;--h:1;--d:30;--c:#212531">
+                                <i class="bm"></i>
+                            </div>
+                            <div class="b" style="--x:0;--y:4;--z:-15.5;--w:32;--h:8;--d:1;--c:#7b8493">
+                                <i class="ft"></i>
+                            </div>
+                            <div class="b" style="--x:0;--y:4;--z:15.5;--w:32;--h:8;--d:1;--c:#7b8493">
+                                <i class="bk"></i>
+                            </div>
+                            <div class="b" style="--x:-15.5;--y:4;--z:0;--w:1;--h:8;--d:30;--c:#7b8493">
+                                <i class="rt"></i>
+                            </div>
+                            <div class="b" style="--x:15.5;--y:4;--z:-0;--w:1;--h:8;--d:30;--c:#7b8493">
+                                <i class="lt"></i>
+                            </div>
+
+                            <!--pillar partrtttt-->
+                            <div class="b" style="--x:-8;--y:0.2;--z:10;--w:1.7;--h:0.4;--d:1.7;--c:#8c877b">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+                            <div class="b" style="--x:-8;--y:3.975;--z:10;--w:1.1;--h:7.15;--d:1.1;--c:#b9b4a7">
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+                            <div class="b" style="--x:-8;--y:7.775;--z:10;--w:1.7;--h:0.45;--d:1.7;--c:#a7a295">
+                                <i class="bm"></i>
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+                            <div class="b" style="--x:8;--y:0.2;--z:10;--w:1.7;--h:0.4;--d:1.7;--c:#8c877b">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+                            <div class="b" style="--x:8;--y:3.975;--z:10;--w:1.1;--h:7.15;--d:1.1;--c:#b9b4a7">
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+                            <div class="b" style="--x:8;--y:7.775;--z:10;--w:1.7;--h:0.45;--d:1.7;--c:#a7a295">
+                                <i class="bm"></i>
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+                            <div class="b" style="--x:-8;--y:0.2;--z:4;--w:1.7;--h:0.4;--d:1.7;--c:#8c877b">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+                            <div class="b" style="--x:-8;--y:3.975;--z:4;--w:1.1;--h:7.15;--d:1.1;--c:#b9b4a7">
+                                
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+                            <div class="b" style="--x:-8;--y:7.775;--z:4;--w:1.7;--h:0.45;--d:1.7;--c:#a7a295">
+                                
+                                <i class="bm"></i>
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+
+                            </div>
+                             <div class="b" style="--x:8;--y:0.2;--z:4;--w:1.7;--h:0.4;--d:1.7;--c:#8c877b">
+                                
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+
+                            </div>
+                            <div class="b" style="--x:8;--y:3.975;--z:4;--w:1.1;--h:7.15;--d:1.1;--c:#b9b4a7">
+                                
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+                             <div class="b" style="--x:8;--y:7.775;--z:4;--w:1.7;--h:0.45;--d:1.7;--c:#a7a295">
+                                
+                                <i class="bm"></i>
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+                            <div class="b" style="--x:-8;--y:0.2;--z:-2;--w:1.7;--h:0.4;--d:1.7;--c:#8c877b">
+                                
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+                            <div class="b" style="--x:-8;--y:3.975;--z:-2;--w:1.1;--h:7.15;--d:1.1;--c:#b9b4a7">
+                                
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+                            <div class="b" style="--x:-8;--y:7.775;--z:-2;--w:1.7;--h:0.45;--d:1.7;--c:#a7a295">
+                                
+                                <i class="bm"></i>
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+                            <div class="b" style="--x:8;--y:0.2;--z:-2;--w:1.7;--h:0.4;--d:1.7;--c:#8c877b">
+                                
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+                            <div class="b" style="--x:8;--y:3.975;--z:-2;--w:1.1;--h:7.15;--d:1.1;--c:#b9b4a7">
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+                            <div class="b" style="--x:8;--y:7.775;--z:-2;--w:1.7;--h:0.45;--d:1.7;--c:#a7a295">
+                                <i class="bm"></i>
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+
+                            <!--stairs-->
+                            <div class="b" style="--x:0;--y:1.6;--z:-11.5;--w:30;--h:3.2;--d:7;--c:#8e897d">
+                                <i class="tp" style="--c:#a49f92"></i>
+                                <i class="ft"></i>
+                               
+                            </div>
+                            <div class="b" style="--x:0;--y:0.2;--z:-0.5;--w:8;--h:0.4;--d:1;--c:#a29c8f">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                            </div>
+                            
+
+                            <div class="b" style="--x:0;--y:0.6;--z:-1.5;--w:8;--h:0.4;--d:1;--c:#938d81">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                            </div>
+                            
+
+                            <div class="b" style="--x:0;--y:1;--z:-2.5;--w:8;--h:0.4;--d:1;--c:#a29c8f">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                            </div>
+                           
+
+                            <div class="b" style="--x:0;--y:1.4;--z:-3.5;--w:8;--h:0.4;--d:1;--c:#938d81">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                            </div>
+                            
+
+                            <div class="b" style="--x:0;--y:1.8;--z:-4.5;--w:8;--h:0.4;--d:1;--c:#a29c8f">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                            </div>
+                            
+
+                            <div class="b" style="--x:0;--y:2.2;--z:-5.5;--w:8;--h:0.4;--d:1;--c:#938d81">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                            </div>
+                            
+
+                            <div class="b" style="--x:0;--y:2.6;--z:-6.5;--w:8;--h:0.4;--d:1;--c:#a29c8f">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                            </div>
+                            
+
+                            <div class="b" style="--x:0;--y:3;--z:-7.5;--w:8;--h:0.4;--d:1;--c:#938d81">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                            </div>
+                            
+
+                            <div class="b" style="--x:-8;--y:3.4;--z:-11.5;--w:1.7;--h:0.4;--d:1.7;--c:#8c877b">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+                            <div class="b" style="--x:-8;--y:5.575;--z:-11.5;--w:1.1;--h:3.95;--d:1.1;--c:#b9b4a7">
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+
+                            <div class="b" style="--x:-8;--y:7.775;--z:-11.5;--w:1.7;--h:0.45;--d:1.7;--c:#a7a295">
+                                <i class="bm"></i>
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+
+
+                            </div>
+                            <div class="b" style="--x:8;--y:3.4;--z:-11.5;--w:1.7;--h:0.4;--d:1.7;--c:#8c877b">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+                            <div class="b" style="--x:8;--y:5.575;--z:-11.5;--w:1.1;--h:3.95;--d:1.1;--c:#b9b4a7">
+                                
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+
+                            <div class="b" style="--x:8;--y:7.775;--z:-11.5;--w:1.7;--h:0.45;--d:1.7;--c:#a7a295">
+                                
+                                <i class="bm"></i>
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+
+
+
+                            <div class="b" style="--x:0;--y:0.015;--z:6;--w:1.2;--h:0.03;--d:1.2;--c:#c9a45c">
+                                <i class="tp"></i>
+                                
+                            </div>
+
+                            <!--railingggggggggg stuff-->
+                            <div class="b" style="--x:-4.2;--y:0.7;--z:-0.5;--w:0.4;--h:1.4;--d:1;--c:#a9a396">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                                <i class="rt"></i>
+                                <i class="lt"></i>
+                            </div>
+                            <div class="b" style="--x:-4.2;--y:0.9;--z:-1.5;--w:0.4;--h:1.8;--d:1;--c:#a9a396">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                                <i class="rt"></i>
+                                <i class="lt"></i>
+                            </div>
+                            <div class="b" style="--x:-4.2;--y:1.1;--z:-2.5;--w:0.4;--h:2.2;--d:1;--c:#a9a396">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                                <i class="rt"></i>
+                                <i class="lt"></i>
+                            </div>
+                            <div class="b" style="--x:-4.2;--y:1.3;--z:-3.5;--w:0.4;--h:2.6;--d:1;--c:#a9a396">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                                <i class="rt"></i>
+                                <i class="lt"></i>
+                            </div>
+                            <div class="b" style="--x:-4.2;--y:1.5;--z:-4.5;--w:0.4;--h:3;--d:1;--c:#a9a396">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                                <i class="rt"></i>
+                                <i class="lt"></i>
+                            </div>
+                            <div class="b" style="--x:-4.2;--y:1.7;--z:-5.5;--w:0.4;--h:3.4;--d:1;--c:#a9a396">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                                <i class="rt"></i>
+                                <i class="lt"></i>
+                            </div>
+                            <div class="b" style="--x:-4.2;--y:1.9;--z:-6.5;--w:0.4;--h:3.8;--d:1;--c:#a9a396">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                                <i class="rt"></i>
+                                <i class="lt"></i>
+                            </div>
+                            <div class="b" style="--x:-4.2;--y:2.1;--z:-7.5;--w:0.4;--h:4.2;--d:1;--c:#a9a396">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                                <i class="rt"></i>
+                                <i class="lt"></i>
+                            </div>
+                            <div class="b" style="--x:-4.25;--y:0.7;--z:0.225;--w:0.5;--h:1.4;--d:0.45;--c:#8c877b">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                                <i class="rt"></i>
+                                <i class="lt"></i>
+                            </div>
+                            <div class="b" style="--x:4.2;--y:0.7;--z:-0.5;--w:0.4;--h:1.4;--d:1;--c:#a9a396">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+
+                            <div class="b" style="--x:4.2;--y:0.9;--z:-1.5;--w:0.4;--h:1.8;--d:1;--c:#a9a396">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+                            <div class="b" style="--x:4.2;--y:1.1;--z:-2.5;--w:0.4;--h:2.2;--d:1;--c:#a9a396">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+                            <div class="b" style="--x:4.2;--y:1.3;--z:-3.5;--w:0.4;--h:2.6;--d:1;--c:#a9a396">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+                            <div class="b" style="--x:4.2;--y:1.5;--z:-4.5;--w:0.4;--h:3;--d:1;--c:#a9a396">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+                            <div class="b" style="--x:4.2;--y:1.7;--z:-5.5;--w:0.4;--h:3.4;--d:1;--c:#a9a396">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+                            <div class="b" style="--x:4.2;--y:1.9;--z:-6.5;--w:0.4;--h:3.8;--d:1;--c:#a9a396">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+                            <div class="b" style="--x:4.2;--y:2.1;--z:-7.5;--w:0.4;--h:4.2;--d:1;--c:#a9a396">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+
+
+                            <div class="b" style="--x:4.25;--y:0.7;--z:0.225;--w:0.5;--h:1.4;--d:0.45;--c:#8c877b">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                            </div>
+
+                            <!--some showoff-->
+                             <div class="b" style="--x:-9.5;--y:3.7;--z:-8.2;--w:11;--h:1;--d:0.4;--c:#a9a396">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="rt"></i>
+                            </div>
+                             <div class="b" style="--x:9.5;--y:3.7;--z:-8.2;--w:11;--h:1;--d:0.4;--c:#a9a396">
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="lt"></i>
+                            </div>
+
+                            <!--up-->
+                             <div class="b" style="--x:0;--y:3.4;--z:-13;--w:10;--h:0.4;--d:4;--c:#8e897d">
+                                <i class="tp" style="--c:#a49f92"></i>
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                             </div>
+
+                                <div class="b" style="--x:0;--y:3.8;--z:-13.7;--w:6;--h:0.4;--d:2.6;--c:#8e897d">
+                                <i class="tp" style="--c:#a49f92"></i>
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                                 </div>
+
+
+
+                                 <!--side room(for spawnning dn will do or not)-->
+                             <div class="b" style="--x:11;--y:4;--z:-4;--w:0.6;--h:8;--d:6.5;--c:#8c887e">
+                                
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                 </div>
+
+                                 <div class="b" style="--x:11;--y:4;--z:8.25;--w:0.6;--h:8;--d:13.5;--c:#8c887e">
+                                
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                                <!--<i class="ft"></i>-->
+                                <i class="bk"></i>
+                                 </div>
+
+
+                                 <div class="b" style="--x:11;--y:6.1;--z:0;--w:0.6;--h:3.8;--d:3;--c:#8c887e">
+                                
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                                <i class="bm"></i>
+                                
+                                 </div>
+
+                                 <div class="b" style="--x:13.15;--y:0.2;--z:0;--w:2.2;--h:0.4;--d:2.2;--c:#8e897d">
+                                
+                                <i class="tp"></i>
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                                
+                                 </div>
+
+                                 <div class="b" style="--x:13.15;--y:0.65;--z:0;--w:1.32;--h:0.5;--d:1.32;--c:#938d81">
+                                
+                                <i class="tp" style="--c:#938d81"></i>
+                                <i class="ft"></i>
+                                <i class="bk"></i>
+                                <i class="lt"></i>
+                                <i class="rt"></i>
+                                
+                                 </div>
+
+                                 <!--mob sistem-->
+                                 <div class="mob g1" style="--x:-2.5;--y:0;--z:1;--ry:15;--dl:0">
+                                    <div class="mob-in">
+                                        <div class="mob-idle">
+                                            <div class="b" style="--x:-0.13;--y:0.4;--z:0;--w:0.2;--h:0.8;--d:0.22;--c:#3a4a63">
+                                                <label class="tp" for="hit1"></label>
+                                                <label class="ft" for="hit1"></label>
+                                                <label class="bk" for="hit1"></label>
+                                                <label class="lt" for="hit1"></label>
+                                                <label class="rt" for="hit1"></label>
+                                            </div>
+                                            <div class="b" style="--x:0.13;--y:0.4;--z:0;--w:0.2;--h:0.8;--d:0.22;--c:#3a4a63">
+                                                <label class="tp" for="hit1"></label>
+                                                <label class="ft" for="hit1"></label>
+                                                <label class="bk" for="hit1"></label>
+                                                <label class="lt" for="hit1"></label>
+                                                <label class="rt" for="hit1"></label>
+                                            </div>
+                                            <div class="b" style="--x:0;--y:1.15;--z:0;--w:0.62;--h:0.7;--d:0.3;--c:#4f6a8f">
+                                                <label class="tp" for="hit1"></label>
+                                                <label class="ft" for="hit1"></label>
+                                                <label class="bk" for="hit1"></label>
+                                                <label class="lt" for="hit1"></label>
+                                                <label class="rt" for="hit1"></label>
+                                            </div>
+                                            <div class="b" style="--x:0;--y:0.83;--z:0;--w:0.65;--h:0.08;--d:0.33;--c:#1c1d22">
+                                                <label class="tp" for="hit1"></label>
+                                                <label class="ft" for="hit1"></label>
+                                                <label class="bk" for="hit1"></label>
+                                                <label class="lt" for="hit1"></label>
+                                                <label class="rt" for="hit1"></label>
+                                            </div>
+                                            <div class="b" style="--x:0.26;--y:0.95;--z:0.3;--w:0.06;--h:0.09;--d:0.5;--c:#23262d">
+                                                <label class="tp" for="hit1"></label>
+                                                <label class="ft" for="hit1"></label>
+                                                <label class="bk" for="hit1"></label>
+                                                <label class="lt" for="hit1"></label>
+                                                <label class="rt" for="hit1"></label>
+                                            </div>
+                                            <div class="b" style="--x:-0.4;--y:1.48;--z:0">
+                                                <div class="swing sw-a">
+                                                    <div class="b" style="--x:-0;--y:-0.3;--z:0;--w:0.17;--h:0.6;--d:0.2;--c:#4f6a8f">
+                                                          <label class="tp" for="hit1"></label>
+                                                <label class="ft" for="hit1"></label>
+                                                <label class="bk" for="hit1"></label>
+                                                <label class="lt" for="hit1"></label>
+                                                <label class="rt" for="hit1"></label>
+                                                    </div>
+                                                   <div class="b" style="--x:0;--y:-0.66;--z:0;--w:0.16;--h:0.12;--d:0.19;--c:#d9a98b">
+                                                <label class="tp" for="hit1"></label>
+                                                <label class="ft" for="hit1"></label>
+                                                <label class="bk" for="hit1"></label>
+                                                <label class="lt" for="hit1"></label>
+                                                <label class="rt" for="hit1"></label>
+                                            </div> 
+                                                    
+                                                </div>
+                                                
+                                            </div>
+
+
+                                            <!--second block-->
+                                             <div class="b" style="--x:0.4;--y:1.48;--z:0">
+                                                <div class="swing sw-b">
+                                                    <div class="b" style="--x:-0;--y:-0.3;--z:0;--w:0.17;--h:0.6;--d:0.2;--c:#4f6a8f">
+                                                          <label class="tp" for="hit1"></label>
+                                                <label class="ft" for="hit1"></label>
+                                                <label class="bk" for="hit1"></label>
+                                                <label class="lt" for="hit1"></label>
+                                                <label class="rt" for="hit1"></label>
+                                                    </div>
+                                                   <div class="b" style="--x:0;--y:-0.66;--z:0;--w:0.16;--h:0.12;--d:0.19;--c:#d9a98b">
+                                                <label class="tp" for="hit1"></label>
+                                                <label class="ft" for="hit1"></label>
+                                                <label class="bk" for="hit1"></label>
+                                                <label class="lt" for="hit1"></label>
+                                                <label class="rt" for="hit1"></label>
+                                            </div> 
+                                                    
+                                                </div>
+                                                
+                                            </div>
+                                             <div class="b" style="--x:0;--y:1.5;--z:0">
+                                                <div class="swing look">
+                                                     <div class="b" style="--x:0;--y:0.15;--z:0;--w:0.3;--h:0.3;--d:0.3;--c:#d9a98b">
+                                                        <label class="tp" for="hit1"></label>
+                                                <label class="ft" for="hit1"></label>
+                                                <label class="bk" for="hit1"></label>
+                                                <label class="lt" for="hit1"></label>
+                                                <label class="rt" for="hit1"></label>
+                                                     </div>
+                                                      <div class="b" style="--x:0;--y:0.37;--z:0;--w:0.36;--h:0.12;--d:0.36;--c:#2e3440">
+                                                        <label class="tp" for="hit1"></label>
+                                                <label class="ft" for="hit1"></label>
+                                                <label class="bk" for="hit1"></label>
+                                                <label class="lt" for="hit1"></label>
+                                                <label class="rt" for="hit1"></label>
+                                                     </div>
+                                                      <div class="b" style="--x:0;--y:0.17;--z:0.152;--w:0.22;--h:0.045;--d:0.01;--c:#1a1410">
+                                                        <i class="ft"></i>
+                                                     </div>
+                                                </div>
+                                             </div>
+
+
+                                        </div>
+                                    </div>
+                                 </div>
+
+
+
+
+                                 <!--mobbb 2 copy-->
+                                 <div class="mob g2" style="--x:5.5;--y:0;--z:-3;--ry:-25;--dl:1.3">
+                                    <div class="mob-in">
+                                        <div class="mob-idle">
+                                            <div class="b" style="--x:-0.13;--y:0.4;--z:0;--w:0.2;--h:0.8;--d:0.22;--c:#3a4a63">
+                                                <label class="tp" for="hit2"></label>
+                                                <label class="ft" for="hit2"></label>
+                                                <label class="bk" for="hit2"></label>
+                                                <label class="lt" for="hit2"></label>
+                                                <label class="rt" for="hit2"></label>
+                                            </div>
+                                            <div class="b" style="--x:0.13;--y:0.4;--z:0;--w:0.2;--h:0.8;--d:0.22;--c:#3a4a63">
+                                                <label class="tp" for="hit2"></label>
+                                                <label class="ft" for="hit2"></label>
+                                                <label class="bk" for="hit2"></label>
+                                                <label class="lt" for="hit2"></label>
+                                                <label class="rt" for="hit2"></label>
+                                            </div>
+                                            <div class="b" style="--x:0;--y:1.15;--z:0;--w:0.62;--h:0.7;--d:0.3;--c:#4f6a8f">
+                                                <label class="tp" for="hit2"></label>
+                                                <label class="ft" for="hit2"></label>
+                                                <label class="bk" for="hit2"></label>
+                                                <label class="lt" for="hit2"></label>
+                                                <label class="rt" for="hit2"></label>
+                                            </div>
+                                            <div class="b" style="--x:0;--y:0.83;--z:0;--w:0.65;--h:0.08;--d:0.33;--c:#1c1d22">
+                                                <label class="tp" for="hit2"></label>
+                                                <label class="ft" for="hit2"></label>
+                                                <label class="bk" for="hit2"></label>
+                                                <label class="lt" for="hit2"></label>
+                                                <label class="rt" for="hit2"></label>
+                                            </div>
+                                            <div class="b" style="--x:0.26;--y:0.95;--z:0.3;--w:0.06;--h:0.09;--d:0.5;--c:#23262d">
+                                                <label class="tp" for="hit2"></label>
+                                                <label class="ft" for="hit2"></label>
+                                                <label class="bk" for="hit2"></label>
+                                                <label class="lt" for="hit2"></label>
+                                                <label class="rt" for="hit2"></label>
+                                            </div>
+                                            <div class="b" style="--x:-0.4;--y:1.48;--z:0">
+                                                <div class="swing sw-a">
+                                                    <div class="b" style="--x:-0;--y:-0.3;--z:0;--w:0.17;--h:0.6;--d:0.2;--c:#4f6a8f">
+                                                          <label class="tp" for="hit2"></label>
+                                                <label class="ft" for="hit2"></label>
+                                                <label class="bk" for="hit2"></label>
+                                                <label class="lt" for="hit2"></label>
+                                                <label class="rt" for="hit2"></label>
+                                                    </div>
+                                                   <div class="b" style="--x:0;--y:-0.66;--z:0;--w:0.16;--h:0.12;--d:0.19;--c:#d9a98b">
+                                                <label class="tp" for="hit2"></label>
+                                                <label class="ft" for="hit2"></label>
+                                                <label class="bk" for="hit2"></label>
+                                                <label class="lt" for="hit2"></label>
+                                                <label class="rt" for="hit2"></label>
+                                            </div> 
+                                                    
+                                                </div>
+                                                
+                                            </div>
+
+
+                                            <!--second block part 2-->
+                                             <div class="b" style="--x:0.4;--y:1.48;--z:0">
+                                                <div class="swing sw-b">
+                                                    <div class="b" style="--x:-0;--y:-0.3;--z:0;--w:0.17;--h:0.6;--d:0.2;--c:#4f6a8f">
+                                                          <label class="tp" for="hit2"></label>
+                                                <label class="ft" for="hit2"></label>
+                                                <label class="bk" for="hit2"></label>
+                                                <label class="lt" for="hit2"></label>
+                                                <label class="rt" for="hit2"></label>
+                                                    </div>
+                                                   <div class="b" style="--x:0;--y:-0.66;--z:0;--w:0.16;--h:0.12;--d:0.19;--c:#d9a98b">
+                                                <label class="tp" for="hit2"></label>
+                                                <label class="ft" for="hit2"></label>
+                                                <label class="bk" for="hit2"></label>
+                                                <label class="lt" for="hit2"></label>
+                                                <label class="rt" for="hit2"></label>
+                                            </div> 
+                                                    
+                                                </div>
+                                                
+                                            </div>
+                                             <div class="b" style="--x:0;--y:1.5;--z:0">
+                                                <div class="swing look">
+                                                     <div class="b" style="--x:0;--y:0.15;--z:0;--w:0.3;--h:0.3;--d:0.3;--c:#d9a98b">
+                                                        <label class="tp" for="hit2"></label>
+                                                <label class="ft" for="hit2"></label>
+                                                <label class="bk" for="hit2"></label>
+                                                <label class="lt" for="hit2"></label>
+                                                <label class="rt" for="hit2"></label>
+                                                     </div>
+                                                      <div class="b" style="--x:0;--y:0.37;--z:0;--w:0.36;--h:0.12;--d:0.36;--c:#2e3440">
+                                                        <label class="tp" for="hit2"></label>
+                                                <label class="ft" for="hit2"></label>
+                                                <label class="bk" for="hit2"></label>
+                                                <label class="lt" for="hit2"></label>
+                                                <label class="rt" for="hit2"></label>
+                                                     </div>
+                                                      <div class="b" style="--x:0;--y:0.17;--z:0.152;--w:0.22;--h:0.045;--d:0.01;--c:#1a1410">
+                                                        <i class="ft"></i>
+                                                     </div>
+                                                </div>
+                                             </div>
+
+
+                                        </div>
+                                    </div>
+                                 </div>
+
+
+
+
+
+
+
+                                 <div class="mob g3" style="--x:0;--y:4;--z:-13.7;--ry:0;--dl:2.1">
+                                    <div class="mob-in">
+                                        <div class="mob-idle">
+                                            <div class="b" style="--x:-0.13;--y:0.4;--z:0;--w:0.2;--h:0.8;--d:0.22;--c:#4a2a28">
+                                                <label class="tp" for="hit3"></label>
+                                                <label class="ft" for="hit3"></label>
+                                                <label class="bk" for="hit3"></label>
+                                                <label class="lt" for="hit3"></label>
+                                                <label class="rt" for="hit3"></label>
+                                            </div>
+                                            <div class="b" style="--x:0.13;--y:0.4;--z:0;--w:0.2;--h:0.8;--d:0.22;--c:#4a2a28">
+                                                <label class="tp" for="hit3"></label>
+                                                <label class="ft" for="hit3"></label>
+                                                <label class="bk" for="hit3"></label>
+                                                <label class="lt" for="hit3"></label>
+                                                <label class="rt" for="hit3"></label>
+                                            </div>
+                                            <div class="b" style="--x:0;--y:1.15;--z:0;--w:0.62;--h:0.7;--d:0.3;--c:#8a3b32">
+                                                <label class="tp" for="hit3"></label>
+                                                <label class="ft" for="hit3"></label>
+                                                <label class="bk" for="hit3"></label>
+                                                <label class="lt" for="hit3"></label>
+                                                <label class="rt" for="hit3"></label>
+                                            </div>
+                                            <div class="b" style="--x:0;--y:0.83;--z:0;--w:0.65;--h:0.08;--d:0.33;--c:#1c1d22">
+                                                <label class="tp" for="hit3"></label>
+                                                <label class="ft" for="hit3"></label>
+                                                <label class="bk" for="hit3"></label>
+                                                <label class="lt" for="hit3"></label>
+                                                <label class="rt" for="hit3"></label>
+                                            </div>
+                                            <div class="b" style="--x:0.26;--y:0.95;--z:0.3;--w:0.06;--h:0.09;--d:0.5;--c:#23262d">
+                                                <label class="tp" for="hit3"></label>
+                                                <label class="ft" for="hit3"></label>
+                                                <label class="bk" for="hit3"></label>
+                                                <label class="lt" for="hit3"></label>
+                                                <label class="rt" for="hit3"></label>
+                                            </div>
+                                            <div class="b" style="--x:-0.4;--y:1.48;--z:0">
+                                                <div class="swing sw-a">
+                                                    <div class="b" style="--x:-0;--y:-0.3;--z:0;--w:0.17;--h:0.6;--d:0.2;--c:#8a3b32">
+                                                          <label class="tp" for="hit3"></label>
+                                                <label class="ft" for="hit3"></label>
+                                                <label class="bk" for="hit3"></label>
+                                                <label class="lt" for="hit3"></label>
+                                                <label class="rt" for="hit3"></label>
+                                                    </div>
+                                                   <div class="b" style="--x:0;--y:-0.66;--z:0;--w:0.16;--h:0.12;--d:0.19;--c:#d9a98b">
+                                                <label class="tp" for="hit3"></label>
+                                                <label class="ft" for="hit3"></label>
+                                                <label class="bk" for="hit3"></label>
+                                                <label class="lt" for="hit3"></label>
+                                                <label class="rt" for="hit3"></label>
+                                            </div> 
+                                                    
+                                                </div>
+                                                
+                                            </div>
+
+
+                                            <!--second block part 2-->
+                                             <div class="b" style="--x:0.4;--y:1.48;--z:0">
+                                                <div class="swing sw-b">
+                                                    <div class="b" style="--x:-0;--y:-0.3;--z:0;--w:0.17;--h:0.6;--d:0.2;--c:#8a3b32">
+                                                          <label class="tp" for="hit3"></label>
+                                                <label class="ft" for="hit3"></label>
+                                                <label class="bk" for="hit3"></label>
+                                                <label class="lt" for="hit3"></label>
+                                                <label class="rt" for="hit3"></label>
+                                                    </div>
+                                                   <div class="b" style="--x:0;--y:-0.66;--z:0;--w:0.16;--h:0.12;--d:0.19;--c:#d9a98b">
+                                                <label class="tp" for="hit3"></label>
+                                                <label class="ft" for="hit3"></label>
+                                                <label class="bk" for="hit3"></label>
+                                                <label class="lt" for="hit3"></label>
+                                                <label class="rt" for="hit3"></label>
+                                            </div> 
+                                                    
+                                                </div>
+                                                
+                                            </div>
+                                             <div class="b" style="--x:0;--y:1.5;--z:0">
+                                                <div class="swing look">
+                                                     <div class="b" style="--x:0;--y:0.15;--z:0;--w:0.3;--h:0.3;--d:0.3;--c:#d9a98b">
+                                                        <label class="tp" for="hit3"></label>
+                                                <label class="ft" for="hit3"></label>
+                                                <label class="bk" for="hit3"></label>
+                                                <label class="lt" for="hit3"></label>
+                                                <label class="rt" for="hit3"></label>
+                                                     </div>
+                                                      <div class="b" style="--x:0;--y:0.37;--z:0;--w:0.36;--h:0.12;--d:0.36;--c:#d8d2c0">
+                                                        <label class="tp" for="hit3"></label>
+                                                <label class="ft" for="hit3"></label>
+                                                <label class="bk" for="hit3"></label>
+                                                <label class="lt" for="hit3"></label>
+                                                <label class="rt" for="hit3"></label>
+                                                     </div>
+                                                      <div class="b" style="--x:0;--y:0.17;--z:0.152;--w:0.22;--h:0.045;--d:0.01;--c:#1a1410">
+                                                        <i class="ft"></i>
+                                                     </div>
+                                                </div>
+                                             </div>
+
+
+                                        </div>
+                                    </div>
+                                 </div>
+
+
+
+
+                                 <div class="mob g4" style="--x:-11;--y:0;--z:2;--ry:35;--dl:0.7">
+                                    <div class="mob-in">
+                                        <div class="mob-idle">
+                                            <div class="b" style="--x:-0.13;--y:0.4;--z:0;--w:0.2;--h:0.8;--d:0.22;--c:#4a2a28">
+                                                <label class="tp" for="hit4"></label>
+                                                <label class="ft" for="hit4"></label>
+                                                <label class="bk" for="hit4"></label>
+                                                <label class="lt" for="hit4"></label>
+                                                <label class="rt" for="hit4"></label>
+                                            </div>
+                                            <div class="b" style="--x:0.13;--y:0.4;--z:0;--w:0.2;--h:0.8;--d:0.22;--c:#4a2a28">
+                                                <label class="tp" for="hit4"></label>
+                                                <label class="ft" for="hit4"></label>
+                                                <label class="bk" for="hit4"></label>
+                                                <label class="lt" for="hit4"></label>
+                                                <label class="rt" for="hit4"></label>
+                                            </div>
+                                            <div class="b" style="--x:0;--y:1.15;--z:0;--w:0.62;--h:0.7;--d:0.3;--c:#8a3b32">
+                                                <label class="tp" for="hit4"></label>
+                                                <label class="ft" for="hit4"></label>
+                                                <label class="bk" for="hit4"></label>
+                                                <label class="lt" for="hit4"></label>
+                                                <label class="rt" for="hit4"></label>
+                                            </div>
+                                            <div class="b" style="--x:0;--y:0.83;--z:0;--w:0.65;--h:0.08;--d:0.33;--c:#1c1d22">
+                                                <label class="tp" for="hit4"></label>
+                                                <label class="ft" for="hit4"></label>
+                                                <label class="bk" for="hit4"></label>
+                                                <label class="lt" for="hit4"></label>
+                                                <label class="rt" for="hit4"></label>
+                                            </div>
+                                            <div class="b" style="--x:0.26;--y:0.95;--z:0.3;--w:0.06;--h:0.09;--d:0.5;--c:#23262d">
+                                                <label class="tp" for="hit4"></label>
+                                                <label class="ft" for="hit4"></label>
+                                                <label class="bk" for="hit4"></label>
+                                                <label class="lt" for="hit4"></label>
+                                                <label class="rt" for="hit4"></label>
+                                            </div>
+                                            <div class="b" style="--x:-0.4;--y:1.48;--z:0">
+                                                <div class="swing sw-a">
+                                                    <div class="b" style="--x:-0;--y:-0.3;--z:0;--w:0.17;--h:0.6;--d:0.2;--c:#8a3b32">
+                                                          <label class="tp" for="hit4"></label>
+                                                <label class="ft" for="hit4"></label>
+                                                <label class="bk" for="hit4"></label>
+                                                <label class="lt" for="hit4"></label>
+                                                <label class="rt" for="hit4"></label>
+                                                    </div>
+                                                   <div class="b" style="--x:0;--y:-0.66;--z:0;--w:0.16;--h:0.12;--d:0.19;--c:#d9a98b">
+                                                <label class="tp" for="hit4"></label>
+                                                <label class="ft" for="hit4"></label>
+                                                <label class="bk" for="hit4"></label>
+                                                <label class="lt" for="hit4"></label>
+                                                <label class="rt" for="hit4"></label>
+                                            </div> 
+                                                    
+                                                </div>
+                                                
+                                            </div>
+
+
+                                            <!--second block part 2-->
+                                             <div class="b" style="--x:0.4;--y:1.48;--z:0">
+                                                <div class="swing sw-b">
+                                                    <div class="b" style="--x:-0;--y:-0.3;--z:0;--w:0.17;--h:0.6;--d:0.2;--c:#8a3b32">
+                                                          <label class="tp" for="hit4"></label>
+                                                <label class="ft" for="hit4"></label>
+                                                <label class="bk" for="hit4"></label>
+                                                <label class="lt" for="hit4"></label>
+                                                <label class="rt" for="hit4"></label>
+                                                    </div>
+                                                   <div class="b" style="--x:0;--y:-0.66;--z:0;--w:0.16;--h:0.12;--d:0.19;--c:#d9a98b">
+                                                <label class="tp" for="hit4"></label>
+                                                <label class="ft" for="hit4"></label>
+                                                <label class="bk" for="hit4"></label>
+                                                <label class="lt" for="hit4"></label>
+                                                <label class="rt" for="hit4"></label>
+                                            </div> 
+                                                    
+                                                </div>
+                                                
+                                            </div>
+                                             <div class="b" style="--x:0;--y:1.5;--z:0">
+                                                <div class="swing look">
+                                                     <div class="b" style="--x:0;--y:0.15;--z:0;--w:0.3;--h:0.3;--d:0.3;--c:#d9a98b">
+                                                        <label class="tp" for="hit4"></label>
+                                                <label class="ft" for="hit4"></label>
+                                                <label class="bk" for="hit4"></label>
+                                                <label class="lt" for="hit4"></label>
+                                                <label class="rt" for="hit4"></label>
+                                                     </div>
+                                                      <div class="b" style="--x:0;--y:0.37;--z:0;--w:0.36;--h:0.12;--d:0.36;--c:#d8d2c0">
+                                                        <label class="tp" for="hit4"></label>
+                                                <label class="ft" for="hit4"></label>
+                                                <label class="bk" for="hit4"></label>
+                                                <label class="lt" for="hit4"></label>
+                                                <label class="rt" for="hit4"></label>
+                                                     </div>
+                                                      <div class="b" style="--x:0;--y:0.17;--z:0.152;--w:0.22;--h:0.045;--d:0.01;--c:#1a1410">
+                                                        <i class="ft"></i>
+                                                     </div>
+                                                </div>
+                                             </div>
+
+
+                                        </div>
+                                    </div>
+                                 </div>
+
+
+
+
+
+
+
+
+
+
+                                 <div class="mob g5" style="--x:-5.5;--y:0;--z:-6;--ry:20;--dl:1.7">
+                                    <div class="mob-in">
+                                        <div class="mob-idle">
+                                            <div class="b" style="--x:-0.13;--y:0.4;--z:0;--w:0.2;--h:0.8;--d:0.22;--c:#4a2a28">
+                                                <label class="tp" for="hit5"></label>
+                                                <label class="ft" for="hit5"></label>
+                                                <label class="bk" for="hit5"></label>
+                                                <label class="lt" for="hit5"></label>
+                                                <label class="rt" for="hit5"></label>
+                                            </div>
+                                            <div class="b" style="--x:0.13;--y:0.4;--z:0;--w:0.2;--h:0.8;--d:0.22;--c:#4a2a28">
+                                                <label class="tp" for="hit5"></label>
+                                                <label class="ft" for="hit5"></label>
+                                                <label class="bk" for="hit5"></label>
+                                                <label class="lt" for="hit5"></label>
+                                                <label class="rt" for="hit5"></label>
+                                            </div>
+                                            <div class="b" style="--x:0;--y:1.15;--z:0;--w:0.62;--h:0.7;--d:0.3;--c:#8a3b32">
+                                                <label class="tp" for="hit5"></label>
+                                                <label class="ft" for="hit5"></label>
+                                                <label class="bk" for="hit5"></label>
+                                                <label class="lt" for="hit5"></label>
+                                                <label class="rt" for="hit5"></label>
+                                            </div>
+                                            <div class="b" style="--x:0;--y:0.83;--z:0;--w:0.65;--h:0.08;--d:0.33;--c:#1c1d22">
+                                                <label class="tp" for="hit5"></label>
+                                                <label class="ft" for="hit5"></label>
+                                                <label class="bk" for="hit5"></label>
+                                                <label class="lt" for="hit5"></label>
+                                                <label class="rt" for="hit5"></label>
+                                            </div>
+                                            <div class="b" style="--x:0.26;--y:0.95;--z:0.3;--w:0.06;--h:0.09;--d:0.5;--c:#23262d">
+                                                <label class="tp" for="hit5"></label>
+                                                <label class="ft" for="hit5"></label>
+                                                <label class="bk" for="hit5"></label>
+                                                <label class="lt" for="hit5"></label>
+                                                <label class="rt" for="hit5"></label>
+                                            </div>
+                                            <div class="b" style="--x:-0.4;--y:1.48;--z:0">
+                                                <div class="swing sw-a">
+                                                    <div class="b" style="--x:-0;--y:-0.3;--z:0;--w:0.17;--h:0.6;--d:0.2;--c:#8a3b32">
+                                                          <label class="tp" for="hit5"></label>
+                                                <label class="ft" for="hit5"></label>
+                                                <label class="bk" for="hit5"></label>
+                                                <label class="lt" for="hit5"></label>
+                                                <label class="rt" for="hit5"></label>
+                                                    </div>
+                                                   <div class="b" style="--x:0;--y:-0.66;--z:0;--w:0.16;--h:0.12;--d:0.19;--c:#d9a98b">
+                                                <label class="tp" for="hit5"></label>
+                                                <label class="ft" for="hit5"></label>
+                                                <label class="bk" for="hit5"></label>
+                                                <label class="lt" for="hit5"></label>
+                                                <label class="rt" for="hit5"></label>
+                                            </div> 
+                                                    
+                                                </div>
+                                                
+                                            </div>
+
+
+                                            <!--second block part 2-->
+                                             <div class="b" style="--x:0.4;--y:1.48;--z:0">
+                                                <div class="swing sw-b">
+                                                    <div class="b" style="--x:-0;--y:-0.3;--z:0;--w:0.17;--h:0.6;--d:0.2;--c:#8a3b32">
+                                                          <label class="tp" for="hit5"></label>
+                                                <label class="ft" for="hit5"></label>
+                                                <label class="bk" for="hit5"></label>
+                                                <label class="lt" for="hit5"></label>
+                                                <label class="rt" for="hit5"></label>
+                                                    </div>
+                                                   <div class="b" style="--x:0;--y:-0.66;--z:0;--w:0.16;--h:0.12;--d:0.19;--c:#d9a98b">
+                                                <label class="tp" for="hit5"></label>
+                                                <label class="ft" for="hit5"></label>
+                                                <label class="bk" for="hit5"></label>
+                                                <label class="lt" for="hit5"></label>
+                                                <label class="rt" for="hit5"></label>
+                                            </div> 
+                                                    
+                                                </div>
+                                                
+                                            </div>
+                                             <div class="b" style="--x:0;--y:1.5;--z:0">
+                                                <div class="swing look">
+                                                     <div class="b" style="--x:0;--y:0.15;--z:0;--w:0.3;--h:0.3;--d:0.3;--c:#d9a98b">
+                                                        <label class="tp" for="hit5"></label>
+                                                <label class="ft" for="hit5"></label>
+                                                <label class="bk" for="hit5"></label>
+                                                <label class="lt" for="hit5"></label>
+                                                <label class="rt" for="hit5"></label>
+                                                     </div>
+                                                      <div class="b" style="--x:0;--y:0.37;--z:0;--w:0.36;--h:0.12;--d:0.36;--c:#d8d2c0">
+                                                        <label class="tp" for="hit5"></label>
+                                                <label class="ft" for="hit5"></label>
+                                                <label class="bk" for="hit5"></label>
+                                                <label class="lt" for="hit5"></label>
+                                                <label class="rt" for="hit5"></label>
+                                                     </div>
+                                                      <div class="b" style="--x:0;--y:0.17;--z:0.152;--w:0.22;--h:0.045;--d:0.01;--c:#1a1410">
+                                                        <i class="ft"></i>
+                                                     </div>
+                                                </div>
+                                             </div>
+
+
+                                        </div>
+                                    </div>
+                                 </div>
+
+
+
+                                 <div class="b lamp" style="--x:-8;--y:7.97;--z:1;--w:2.4;--h:0.06;--d:2.4;--c:#fff4c8">
+                                    <i class="bm" style="--s:0"></i>
+                                 </div>
+
+                                 <div class="b pool" style="--x:-8;--y:0.04;--z:1;--w:9;--h:0.02;--d:9;--c:#000">
+                                    <i class="tp"></i>
+                                 </div>
+                                 <div class="b lamp flicker" style="--x:8;--y:7.97;--z:1;--w:2.4;--h:0.06;--d:2.4;--c:#fff4c8">
+                                    <i class="bm" style="--s:0"></i>
+                                 </div>
+                                 <div class="b pool flicker" style="--x:8;--y:0.04;--z:1;--w:9;--h:0.02;--d:9;--c:#000">
+                                    <i class="tp"></i>
+                                 </div>
+                                 <div class="b lamp" style="--x:0;--y:7.97;--z:-13.7;--w:2.4;--h:0.06;--d:2.4;--c:#fff4c8">
+    <i class="bm" style="--s:0"></i>
+</div>
+
+
+<div class="b pool" style="--x:0;--y:4.03;--z:-13.7;--w:5.4;--h:0.02;--d:2.4;--c:#000">
+    <i class="tp"></i>
+</div>
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+</body>
+</html>

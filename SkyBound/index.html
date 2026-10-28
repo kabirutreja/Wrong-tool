@@ -1,0 +1,163 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKYBOUND - The Floating Islands</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="topbar">
+        <h1>SKYBOUND<span>.</span></h1>
+        <p>WORLD 01 / THE FLOATING ISLANDS</p>
+    </header>
+
+    <main class="game">
+        <div class="sky"></div>
+        <div class="sun"></div>
+
+        <input type="checkbox" id="crystal-collected">
+        <input type="radio" name="route" id="route-main" checked>
+        <input type="radio" name="route" id="route-left">
+        <input type="radio" name="route" id="route-right">
+
+        <div class="world">
+            <div class="island island-back">
+                <div class="grass"></div>
+                <div class="rock"></div>
+
+                <div class="tree">
+                    <div class="trunk">
+                        <div class="trunk-face front"></div>
+                        <div class="trunk-face back"></div>
+                        <div class="trunk-face left"></div>
+                        <div class="trunk-face right"></div>
+                    </div>
+                    <div class="leaves">
+                        <div class="leaf-face front"></div>
+                        <div class="leaf-face back"></div>
+                        <div class="leaf-face left"></div>
+                        <div class="leaf-face right"></div>
+                        <div class="leaf-face top"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="island island-left">
+                <div class="grass"></div>
+                <div class="rock"></div>
+
+                <div class="tree pink-tree">
+                    <div class="trunk">
+                        <div class="trunk-face front"></div>
+                        <div class="trunk-face back"></div>
+                        <div class="trunk-face left"></div>
+                        <div class="trunk-face right"></div>
+                    </div>
+                    <div class="leaves">
+                        <div class="leaf-face front"></div>
+                        <div class="leaf-face back"></div>
+                        <div class="leaf-face left"></div>
+                        <div class="leaf-face right"></div>
+                        <div class="leaf-face top"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="island island-main">
+                <div class="grass"></div>
+                <div class="rock"></div>
+
+                <div class="platform">
+                    <div class="platform-top"></div>
+                </div>
+
+                <a class="portal" href="level2.html" aria-label="Enter level 2">
+                    <span class="portal-ring"></span>
+                    <span class="portal-prompt">ENTER PORTAL</span>
+                </a>
+            </div>
+
+            <div class="island island-right">
+                <div class="grass"></div>
+                <div class="rock"></div>
+
+                <div class="tree">
+                    <div class="trunk">
+                        <div class="trunk-face front"></div>
+                        <div class="trunk-face back"></div>
+                        <div class="trunk-face left"></div>
+                        <div class="trunk-face right"></div>
+                    </div>
+                    <div class="leaves">
+                        <div class="leaf-face front"></div>
+                        <div class="leaf-face back"></div>
+                        <div class="leaf-face left"></div>
+                        <div class="leaf-face right"></div>
+                        <div class="leaf-face top"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stone stone-one">
+                <div class="stone-top"></div>
+            </div>
+            <div class="stone stone-two">
+                <div class="stone-top"></div>
+            </div>
+            <div class="stone stone-three">
+                <div class="stone-top"></div>
+            </div>
+
+            <label for="crystal-collected" class="crystal-pickup">
+                <span class="crystal">
+                    <span class="crystal-face crystal-front"></span>
+                    <span class="crystal-face crystal-back"></span>
+                    <span class="crystal-face crystal-left"></span>
+                    <span class="crystal-face crystal-right"></span>
+                </span>
+                <span class="collect-prompt">COLLECT CRYSTAL</span>
+            </label>
+
+            <div class="character">
+                <div class="character-shadow"></div>
+
+                <div class="player-head">
+                    <div class="player-hair"></div>
+                    <div class="player-eye eye-left"></div>
+                    <div class="player-eye eye-right"></div>
+                </div>
+
+                <div class="player-body">
+                    <div class="backpack"></div>
+                    <div class="player-arm arm-left"></div>
+                    <div class="player-arm arm-right"></div>
+                </div>
+
+                <div class="player-legs">
+                    <div class="player-leg leg-left"></div>
+                    <div class="player-leg leg-right"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-controls">
+            <p>CHOOSE YOUR NEXT JUMP</p>
+            <div class="jump-buttons">
+                <label for="route-left">← Pink Island</label>
+                <label for="route-main">Main Island</label>
+                <label for="route-right">Green Island →</label>
+            </div>
+        </div>
+
+        <section class="hud">
+            <p>EXPLORER</p>
+            <h2>The First Journey</h2>
+            <p>Find the crystal and enter the portal.</p>
+        </section>
+
+        <div class="hint">EXPLORE THE FLOATING ISLANDS</div>
+    </main>
+</body>
+</html>

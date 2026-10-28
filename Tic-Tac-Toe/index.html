@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe Arena</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <main class = "game-container">
+        <header class = "top-bar">
+            <div class = "brand">
+            <div class = "brand-icon">XO</div>
+            <div>
+            <h1>Tic-Tac-Toe</h1>
+            <p class = "subtitle">YOUR NEXT MOVE MATTERS</p>
+            </div>
+            </div>
+            <div class = "version-tag">v1.0.0</div>
+        </header>
+        <nav class = "main-nav">
+            <button class = "nav-tab active" data-tab="gameView">Game</button>
+            <button class = "nav-tab" data-tab="statsView">Stats</button>
+            <button class = "nav-tab" data-tab="achievementsView">Achievements</button>
+            <button class = "nav-tab" data-tab="historyView">History</button>
+        </nav>
+        <section class = "game-panel" id="gameView">
+            <div class="player-level-card" id="playerLevelCard">
+                <div class="player-level-top">
+                    <div>
+                        <p class="eyebrow">PLAYER PROFILE</p>
+                        <h2>LEVEL <span id="playerLevel">1</span></h2>
+                    </div>
+                    <div class="player-xp-total"><span id="playerTotalXP">0</span>
+                    <small>TOTAL XP</small>
+                    </div>
+                </div>
+                <div class="player-xp-info">
+                    <span id="playerCurrentXP">0 XP</span>
+                    <span id="playerNextLevelXP">200 XP TO NEXT LEVEL</span>
+                </div>
+                <div
+                class="player-xp-track" role="progressbar" aria-label="Progress toward next level" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="playerXPProgress">
+             <div class="player-xp-fill" id="playerXPBar">
+
+             </div>
+            </div>
+              <p id="levelUpMessage" class="level-up-message" aria-live="polite"></p>
+            </div>
+            <div class = "game-heading">
+                <p class = "eyebrow">SINGLE PLAYER</p>
+                <h2>Challenge the AI</h2>
+                    <p class = "description">Think ahead. Make the best move!</p>
+            </div>
+            <div class = "settings">
+                <label for="difficulty">AI Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="unbeatable">Unbeatable</option>
+                </select>
+            </div>
+            <div class = "status-panel">
+                <span class = "status-dot"></span>
+                <h2 id = "status" role="status" aria-live="polite">Your Turn(X)</h2>
+            </div>
+            <div class = "board" id="board">
+                <div class = "cell" data-index="0" role="button" tabindex="0" aria-label="Square 1, empty"></div>
+                <div class = "cell" data-index="1" role="button" tabindex="0" aria-label="Square 2, empty"></div>
+                <div class = "cell" data-index="2" role="button" tabindex="0" aria-label="Square 3, empty"></div>
+                <div class = "cell" data-index="3" role="button" tabindex="0" aria-label="Square 4, empty"></div>
+                <div class = "cell" data-index="4" role="button" tabindex="0" aria-label="Square 5, empty"></div>
+                <div class = "cell" data-index="5" role="button" tabindex="0" aria-label="Square 6, empty"></div>
+                <div class = "cell" data-index="6" role="button" tabindex="0" aria-label="Square 7, empty"></div>
+                <div class = "cell" data-index="7" role="button" tabindex="0" aria-label="Square 8, empty"></div>
+                <div class = "cell" data-index="8" role="button" tabindex="0" aria-label="Square 9, empty"></div>
+            </div>
+            <div class="game-buttons">
+                <button id="reset" class="reset-button"><span>↻ </span>New Match</button>
+                <button id="sound-toggle" class="sound-button" type="button">SOUND: ON</button>
+            </div>
+                
+                <p class = "footer">Made with ❤️ by <a href = "https://github.com/kabirutreja" target="_blank">Kabir Utreja</a></p>
+        </section>
+        <section class = "placeholder-panel stats-panel" id="statsView" hidden>
+            <div class="page-heading">
+               <p class="eyebrow">YOUR PERFORMANCE IN LAST 10 GAMES</p>
+               <h2>Game Statistics</h2>
+               <p>Every match tells a story.</p>
+            </div>
+             
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <P>Matches</P>
+                    <h3 id="statTotal">0</h3>
+                </div>
+
+                <div class="stat-card">
+                    <p>Wins</p>
+                    <h3 id="statWins">0</h3>
+                </div>
+                
+                <div class="stat-card">
+                    <p>Losses</p>
+                    <h3 id = "statLosses">0</h3>
+                </div>
+
+                <div class="stat-card">
+                    <p>Draws</p>
+                    <h3 id = "statDraws">0</h3>
+                </div>
+            </div>
+                <div class="win-rate-card">
+                    <div class="win-rate-heading">
+                        <span>Win rate</span>
+                        <strong id="statWinRate">0%</strong>
+                    </div>
+                    <div class="progress-track">
+                        <div id="winRateBar"
+                        class="progress-fill"></div>
+                    </div>
+                    <p>Wins divided by all completed matches.</p>
+                </div>
+                    <div class="difficulty-stats">
+                        <h3>Performance by difficulty</h3>
+                        <div class="difficulty-row">
+                            <span>Easy</span>
+                            <strong id="easyStats">0 matches</strong>
+                        </div>
+                        <div class="difficulty-row">
+                            <span>Medium</span>
+                            <strong id="mediumStats">0 matches</strong>
+                        </div>
+                        <div class="difficulty-row">
+                            <span>Unbeatable</span>
+                            <strong id="unbeatableStats">0 matches</strong>
+                        </div>
+                    </div>
+                    <p class="stats-note" id="statsNote">Your completed matches will appear here.</p>
+        </section>
+            
+            
+            
+            
+        <section class = "placeholder-panel" id="achievementsView" hidden>
+            <p class="eyebrow">YOUR REWARDS</p>
+            <h2>Achievements</h2>
+            <p>Complete challenges and unlock rewards.</p>
+            <div id="achievementList" class="achievement-grid"></div>
+            <p id="achievementSummary">0 / 4 BADGES UNLOCKED</p>
+        </section>
+        <section class = "placeholder-panel" id="historyView" hidden>
+            
+            <h2>Match History</h2>
+            <p class="panel-description">Your recently completed matches.</p>
+            <div id="historyList">
+                <p>No matches played yet. Finish a game to see it here!</p>
+            </div>
+            
+        </section>
+    </main>
+    <script src="script.js"></script>
+    <div id="achievementToast" class="achievement-toast" role="status" aria-live="polite">
+        <div class="toast-icon">🏆</div>
+        <div class="toast-text">
+            <p>ACHIEVEMENT UNLOCKED</p>
+            <h3 id="toastAchievementName">FIRST VICTORY</h3>
+        </div>
+    </div>
+</body>
+</html>
